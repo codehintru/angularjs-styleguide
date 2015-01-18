@@ -1,6 +1,6 @@
-# Руководство по стилю для AngularJS
+# Руководство по стилям для AngularJS
 
-*AngularJS соглашения по стилю для команд разработчиков, предложенные [@john_papa](//twitter.com/john_papa)*
+*AngularJS соглашения по стилям для команд разработчиков, предложенные [@john_papa](//twitter.com/john_papa)*
 
 Если вам нужны стандарты написания кода, соглашения, и руководства структурирования приложений AngularJS, то вы находитесь в правильном месте. Эти соглашения основаны на моем опыте программирования на [AngularJS](//angularjs.org), на моих презентациях [Pluralsight training courses](http://pluralsight.com/training/Authors/Details/john-papa), а также на совместной работе в командах разработчиков.
 
