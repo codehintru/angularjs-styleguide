@@ -17,10 +17,10 @@ Many of my styles have been from the many pair programming sessions [Ward Bell](
 ## Смотрите стили в приложении-примере
 Пока данное руководство объясняет *что*, *почему* и *как*, я сразу же показываю, как это работает на практике. Все что я предлагаю и описываю сопровождается примером-приложения, которое соблюдает и демонстрирует стили и шаблоны. Вы можете найти [пример приложения (имя modular) здесь](https://github.com/johnpapa/ng-demos) в папке `modular`. Свободно скачивайте, клонируйте и перемещайте эти примеры в свои хранилища. [Инструкциии по запуску примеров находятся в файлах readme](https://github.com/johnpapa/ng-demos/tree/master/modular).
 
-##Translations 
-[Translations of this Angular style guide](https://github.com/johnpapa/angularjs-styleguide/tree/master/i18n) are maintained by the community and can be found here.
+## Переводы 
+[Переводы данного руководства по Angular-стилям](https://github.com/johnpapa/angularjs-styleguide/tree/master/i18n) поддерживаются соообществом разработчиков и могут быть найдены здесь.
 
-## Table of Contents
+## Содержание
 
   1. [Single Responsibility](#single-responsibility)
   1. [IIFE](#iife)
