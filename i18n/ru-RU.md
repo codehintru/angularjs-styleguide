@@ -103,7 +103,7 @@
   function someFactory() { }
   ```
 
-**[К содержание](#cодержание)**
+**[К содержанию](#cодержание)**
 
 
 ## IIFE
@@ -171,14 +171,14 @@
 
 **[Back to top](#table-of-contents)**
 
-## Modules
+## Модули
 
-### Avoid Naming Collisions
+### Избегайте коллизий имен
 ###### [Style [Y020](#style-y020)]
 
-  - Use unique naming conventions with separators for sub-modules. 
+  - Используйте конвенцию уникальных имен с разделителями для подмодулей.
 
-  *Why?*: Unique names help avoid module name collisions. Separators help define modules and their submodule hierarchy. For example `app` may be your root module while `app.dashboard` and `app.users` may be modules that are used as dependencies of `app`. 
+  *Почему?*: Уникальные имена помогают избежать коллизий в именах модулей. Разделители помогают определить сам модуль и его подмодульную иерархию. Например, `app` может быть вашим корневым модулем, а модули `app.dashboard` и `app.users` могут использоваться как производные от `app`.
 
 ### Definitions (aka Setters)
 ###### [Style [Y021](#style-y021)]
