@@ -106,23 +106,23 @@
 **[К содержание](#Содержание)**
 
 ## IIFE
-### JavaScript Closures
+### Замыкания JavaScript 
 ###### [Style [Y010](#style-y010)]
 
-  - Wrap AngularJS components in an Immediately Invoked Function Expression (IIFE). 
+  - Оборачивайте компоненты AngularJS в Немедленно Исполняемые Функции(IIFE - Immediately Invoked Function Expression). 
 
-  *Why?*: An IIFE removes variables from the global scope. This helps prevent variables and function declarations from living longer than expected in the global scope, which also helps avoid variable collisions.
+  *Зачем?*: IIFE удаляют переменные из глобальной области видимости. Этот прием не дает существовать переменным и функциям дольше, чем это необходимо в глобальной области видимости. Иначе это может вызвать непредсказуемые коллизии во время всего  приложения.
 
-  *Why?*: When your code is minified and bundled into a single file for deployment to a production server, you could have collisions of variables and many global variables. An IIFE protects you against both of these by providing variable scope for each file.
+  *Зачем?*: Когда ваш код будет сжат и упакован (bundled and minified) в один файл для размещения его на рабочем сервере, то коллизий станет намного больше чем их было до минификации. IIFE защитит ваш код обеспечивая область видимости переменных только в немедленно исполняемых функциях(IIFE) которые оборачивают ваш код.
 
   ```javascript
-  /* avoid */
+  /* избегайте этого */
   // logger.js
   angular
       .module('app')
       .factory('logger', logger);
 
-  // logger function is added as a global variable  
+  // функция logger добавлена как глобальная переменная
   function logger() { }
 
   // storage.js
@@ -130,15 +130,15 @@
       .module('app')
       .factory('storage', storage);
 
-  // storage function is added as a global variable  
+  // функция storage добавлена как глобальная переменная
   function storage() { }
   ```
 
   ```javascript
   /**
-   * recommended 
+   * рекомендовано 
    *
-   * no globals are left behind 
+   * больше нет глобальных переменных 
    */
 
   // logger.js
@@ -164,7 +164,7 @@
   })();
   ```
 
-  - Note: For brevity only, the rest of the examples in this guide may omit the IIFE syntax. 
+  - Замечание: Только для краткости, в остальных примерах мы не будем прописывать синтаксис с функциями IIFE. 
 
   - Note: IIFE's prevent test code from reaching private members like regular expressions or helper functions which are often good to unit test directly on their own. However you can test these through accessible members or by exposing them through their own component. For example placing helper functions, regular expressions or constants in their own factory or constant.
 
