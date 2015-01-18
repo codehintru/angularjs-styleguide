@@ -1,4 +1,4 @@
-# AngularJS Style Guide
+# Руководство по стилю для AngularJS
 
 *Opinionated AngularJS style guide for teams by [@john_papa](//twitter.com/john_papa)*
 
