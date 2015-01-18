@@ -57,10 +57,10 @@ Many of my styles have been from the many pair programming sessions [Ward Bell](
 
   - Определяйте 1 компонент в одном файле.
 
-  В следующем примере в одном и том же файле определяется модуль(module) `app` вместе с его зависимостями, определяется контроллер(controller), а также сервис (factory)
+  В следующем примере в одном и том же файле определяется модуль(module) `app` вместе с его зависимостями, определяется контроллер(controller), а также сервис(factory).
 
   ```javascript
-  /* avoid */
+  /* избегайте этого */
   angular
       .module('app', ['ngRoute'])
       .controller('SomeController', SomeController)
@@ -71,10 +71,10 @@ Many of my styles have been from the many pair programming sessions [Ward Bell](
   function someFactory() { }
   ```
 
-  The same components are now separated into their own files.
+  А теперь эти же самые компоненнты разделены каждый в свой отдельный файл.
 
   ```javascript
-  /* recommended */
+  /* рекомендовано */
 
   // app.module.js
   angular
@@ -82,7 +82,7 @@ Many of my styles have been from the many pair programming sessions [Ward Bell](
   ```
 
   ```javascript
-  /* recommended */
+  /* рекомендовано */
 
   // someController.js
   angular
@@ -93,7 +93,7 @@ Many of my styles have been from the many pair programming sessions [Ward Bell](
   ```
 
   ```javascript
-  /* recommended */
+  /* рекомендовано */
 
   // someFactory.js
   angular
@@ -103,7 +103,7 @@ Many of my styles have been from the many pair programming sessions [Ward Bell](
   function someFactory() { }
   ```
 
-**[Back to top](#table-of-contents)**
+**[К оглавлению](#table-of-contents)**
 
 ## IIFE
 ### JavaScript Closures
