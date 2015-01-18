@@ -20,7 +20,7 @@ Many of my styles have been from the many pair programming sessions [Ward Bell](
 ## Переводы 
 [Переводы данного руководства по Angular-стилям](https://github.com/johnpapa/angularjs-styleguide/tree/master/i18n) поддерживаются соообществом разработчиков и могут быть найдены здесь.
 
-## Содержание
+## Table of contents
 
   1. [Single Responsibility](#single-responsibility)
   1. [IIFE](#iife)
@@ -103,7 +103,7 @@ Many of my styles have been from the many pair programming sessions [Ward Bell](
   function someFactory() { }
   ```
 
-**[К содержание](#Содержание)**
+**[К содержание](#table-of-contents)**
 
 ## IIFE
 ### JavaScript Closures
