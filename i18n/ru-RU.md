@@ -71,7 +71,7 @@ Many of my styles have been from the many pair programming sessions [Ward Bell](
   function someFactory() { }
   ```
 
-  А теперь эти же самые компоненнты разделены каждый в свой отдельный файл.
+  А теперь эти же самые компоненты разделены каждый в свой отдельный файл.
 
   ```javascript
   /* рекомендовано */
@@ -103,7 +103,7 @@ Many of my styles have been from the many pair programming sessions [Ward Bell](
   function someFactory() { }
   ```
 
-**[К оглавлению](#table-of-contents)**
+**[К содержание](#Содержание)**
 
 ## IIFE
 ### JavaScript Closures
