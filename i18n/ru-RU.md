@@ -20,7 +20,9 @@
 ## Переводы 
 [Переводы данного руководства по Angular-стилям](https://github.com/johnpapa/angularjs-styleguide/tree/master/i18n) поддерживаются соообществом разработчиков и могут быть найдены здесь.
 
-## Содержание
+## [Содержание(#table-of-contents)]
+
+**[К содержание](#table-of-contents)**
 
   1. [Single Responsibility](#single-responsibility)
   1. [IIFE](#iife)
@@ -71,7 +73,7 @@
   function someFactory() { }
   ```
 
-  А теперь эти же самые компоненты разделены каждый в свой отдельный файл.
+  А теперь каждый компонент разнесен в свой отдельный файл.
 
   ```javascript
   /* рекомендовано */
@@ -166,7 +168,7 @@
 
   - Замечание: Только для краткости, в остальных примерах мы не будем прописывать синтаксис с функциями IIFE. 
 
-  - Note: IIFE's prevent test code from reaching private members like regular expressions or helper functions which are often good to unit test directly on their own. However you can test these through accessible members or by exposing them through their own component. For example placing helper functions, regular expressions or constants in their own factory or constant.
+  - Замечание: IIFE не дает тестировать приватный код, так как предотвращает доступ к нему, например, регулярные выражения или вспомогательные функции, которые нужно оттестировать в модульных тестах (unit test) напрямую. Как выход вы можете тестировать через специальные методы используемые только в тестах (accessible members) или выставить нужные внутренние функции в собственном компоненте. Например, поместите вспомогательные функции, регулярные выражения или константы в собственную фабрику(factory) или константу(constant).
 
 **[Back to top](#table-of-contents)**
 
