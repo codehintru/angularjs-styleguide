@@ -14,7 +14,7 @@
 
 Many of my styles have been from the many pair programming sessions [Ward Bell](http://twitter.com/wardbell) and I have had. While we don't always agree, my friend Ward has certainly helped influence the ultimate evolution of this guide.
 
-## Смотрите стили в приложении-примере
+## Смотрите стили и шаблоны в приложении-примере
 Пока данное руководство объясняет *что*, *почему* и *как*, я сразу же показываю, как это работает на практике. Все что я предлагаю и описываю сопровождается примером-приложения, которое соблюдает и демонстрирует стили и шаблоны. Вы можете найти [пример приложения (имя modular) здесь](https://github.com/johnpapa/ng-demos) в папке `modular`. Свободно скачивайте, клонируйте и перемещайте эти примеры в свои хранилища. [Инструкциии по запуску примеров находятся в файлах readme](https://github.com/johnpapa/ng-demos/tree/master/modular).
 
 ## Переводы 
@@ -52,12 +52,12 @@ Many of my styles have been from the many pair programming sessions [Ward Bell](
 
 ## Single Responsibility
 
-### Rule of 1 
+### Правило 1 
 ###### [Style [Y001](#style-y001)]
 
-  - Define 1 component per file.
+  - Определяйте 1 компонент в одном файле.
 
-  The following example defines the `app` module and its dependencies, defines a controller, and defines a factory all in the same file.
+  В следующем примере в одном и том же файле определяется модуль(module) `app` вместе с его зависимостями, определяется контроллер(controller), а также сервис (factory)
 
   ```javascript
   /* avoid */
