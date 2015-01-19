@@ -180,15 +180,15 @@
 
   *Почему?*: Уникальные имена помогают избежать коллизий в именах модулей. Разделители определяет сам модуль и его подмодульную иерархию. Например, `app` может быть вашим корневым модулем, а модули `app.dashboard` и `app.users` могут использоваться как имена модулей, зависимые от `app`.
 
-### Definitions (aka Setters)
+### Определения (они же Сеттеры(Setters))
 ###### [Style [Y021](#style-y021)]
 
-  - Declare modules without a variable using the setter syntax. 
+  - Объявляйте модули без переменных, используйте сеттеры (setters). 
 
-  *Why?*: With 1 component per file, there is rarely a need to introduce a variable for the module.
+  *Почему?*: Так как обычно в файле 1 компонент, поэтому едва ли потребуется вводить переменную для модуля.
   
   ```javascript
-  /* avoid */
+  /* избегайте этого */
   var app = angular.module('app', [
       'ngAnimate',
       'ngRoute',
@@ -197,10 +197,10 @@
   ]);
   ```
 
-  Instead use the simple setter syntax.
+  Используйте простой синтаксис сеттера.
 
   ```javascript
-  /* recommended */
+  /* рекомендовано */
   angular
       .module('app', [
           'ngAnimate',
@@ -210,15 +210,15 @@
       ]);
   ```
 
-### Getters
+### Геттеры (Getters)
 ###### [Style [Y022](#style-y022)]
 
-  - When using a module, avoid using a variable and instead use chaining with the getter syntax.
+  - Когда нужно использовать модуль, избегайте использования переменных а используйте вместо этого цепочку геттеров.
 
-  *Why?*: This produces more readable code and avoids variable collisions or leaks.
+  *Почему?*: Так вы производите более читаемый код, а также избегаете утечек и коллизий переменных.
 
   ```javascript
-  /* avoid */
+  /* избегайте этого */
   var app = angular.module('app');
   app.controller('SomeController', SomeController);
 
@@ -226,7 +226,7 @@
   ```
 
   ```javascript
-  /* recommended */
+  /* рекомендовано */
   angular
       .module('app')
       .controller('SomeController', SomeController);
