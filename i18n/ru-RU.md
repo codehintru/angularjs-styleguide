@@ -286,7 +286,7 @@
 ### Синтаксис controllerAs в представлении
 ###### [Style [Y030](#style-y030)]
 
-  - Используйте синтаксис [`controllerAs`](http://www.johnpapa.net/do-you-like-your-angular-controllers-with-or-without-sugar/), который работает как надстройка синтаксиса `классический контроллер с $scope`. 
+  - Используйте синтаксис [`controllerAs`](http://www.johnpapa.net/do-you-like-your-angular-controllers-with-or-without-sugar/), который работает поверх синтаксиса `классический контроллер с $scope`. 
 
   *Почему?*: Контроллер создается, также как с ключевым словом "new" и затем предоставляется единственный экземпляр объекта, то есть синтаксис `controllerAs` намного ближе и похожее на конструктор языка JavaScript, чем `классический синтаксис $scope`.
 
