@@ -290,25 +290,25 @@
 
   *Почему?*: Контроллер создается, также как с ключевым словом "new" и затем предоставляется единственный экземпляр объекта, то есть синтаксис `controllerAs` намного ближе и похожее на конструктор языка JavaScript, чем `классический синтаксис $scope`.
 
-  *Why?*: It promotes the use of binding to a "dotted" object in the View (e.g. `customer.name` instead of `name`), which is more contextual, easier to read, and avoids any reference issues that may occur without "dotting".
+  *Почему?*: Это позволяет использовать в представлении связывание на свойство объекта "через точку" (например вместо `name` будет `customer.name`), что является более концептуальным, проще для чтения, и помогает избегать многих ссылочных проблем, которые могут возникнуть без использования "точки".
 
-  *Why?*: Helps avoid using `$parent` calls in Views with nested controllers.
+  *Почему?*: Помогает избежать использование вызовов `$parent` в представлениях с вложенными контроллерами.
 
   ```html
-  <!-- avoid -->
+  <!-- избегайте этого -->
   <div ng-controller="Customer">
       {{ name }}
   </div>
   ```
 
   ```html
-  <!-- recommended -->
+  <!-- рекомендовано -->
   <div ng-controller="Customer as customer">
       {{ customer.name }}
   </div>
   ```
 
-### controllerAs Controller Syntax
+### Синтаксис controllerAs в контроллере
 ###### [Style [Y031](#style-y031)]
 
   - Use the `controllerAs` syntax over the `classic controller with $scope` syntax. 
