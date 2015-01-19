@@ -244,15 +244,15 @@
     - Используйте `angular.module('app', []);` для определения модуля.
     - Используйте `angular.module('app');` чтобы получить модуль. 
 
-### Named vs Anonymous Functions
+### Именованные или Анонимные Функции
 ###### [Style [Y024](#style-y024)]
 
-  - Use named functions instead of passing an anonymous function in as a callback. 
+  - Используйте именованные функции, не передавайте анонимные функции обратного вызова в качестве параметров. 
 
-  *Why?*: This produces more readable code, is much easier to debug, and reduces the amount of nested callback code.
+  *Почему?*: Так вы производите более читаемый код, его легче отлаживать, и это уменьшает число вложенных функций обратного вызова.
 
   ```javascript
-  /* avoid */
+  /* избегайте этого */
   angular
       .module('app')
       .controller('Dashboard', function() { })
@@ -260,7 +260,7 @@
   ```
 
   ```javascript
-  /* recommended */
+  /* рекомендовано */
 
   // dashboard.js
   angular
