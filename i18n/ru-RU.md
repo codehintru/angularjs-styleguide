@@ -234,15 +234,15 @@
   function SomeController() { }
   ```
 
-### Setting vs Getting
+### Определение и получение модулей
 ###### [Style [Y023](#style-y023)]
 
-  - Only set once and get for all other instances.
+  -  Определите один раз и получайте во всех других сущностях.
 
-  *Why?*: A module should only be created once, then retrieved from that point and after.
+  *Почему?*: Модуль должен быть определен только один раз, а потом его используйте во всех остальных местах.
 
-    - Use `angular.module('app', []);` to set a module.
-    - Use `angular.module('app');` to get a module. 
+    - Используйте `angular.module('app', []);` для определения модуля.
+    - Используйте `angular.module('app');` чтобы получить модуль. 
 
 ### Named vs Anonymous Functions
 ###### [Style [Y024](#style-y024)]
