@@ -286,7 +286,7 @@
 ### Синтаксис controllerAs в представлении
 ###### [Style [Y030](#style-y030)]
 
-  - Используйте синтаксис [`controllerAs`](http://www.johnpapa.net/do-you-like-your-angular-controllers-with-or-without-sugar/), который работает поверх синтаксиса `классический контроллер с $scope`. 
+  - Используйте синтаксис [`controllerAs`](http://www.johnpapa.net/do-you-like-your-angular-controllers-with-or-without-sugar/), который работает поверх синтаксиса `классический контроллер со $scope`. 
 
   *Почему?*: Контроллер создается, также как с ключевым словом "new" и затем предоставляется единственный экземпляр объекта, то есть синтаксис `controllerAs` намного ближе и похожее на конструктор языка JavaScript, чем `классический синтаксис $scope`.
 
@@ -311,16 +311,16 @@
 ### Синтаксис controllerAs в контроллере
 ###### [Style [Y031](#style-y031)]
 
-  - Use the `controllerAs` syntax over the `classic controller with $scope` syntax. 
+  - Используйте синтаксис `controllerAs` поверх синтаксиса `классический контроллер со $scope`. 
 
-  - The `controllerAs` syntax uses `this` inside controllers which gets bound to `$scope`
+  - Синтаксис `controllerAs` использует внутри контроллеров ключевую переменную `this`, которая привязывается к `$scope`.
 
-  *Why?*: `controllerAs` is syntactic sugar over `$scope`. You can still bind to the View and still access `$scope` methods.
+  *Почему?*: `controllerAs` это только синтаксический сахар поверх `$scope`. Вы все равно можете использовать связывание в представлениях и все равно имеете доступ к методам `$scope`. 
 
-  *Why?*: Helps avoid the temptation of using `$scope` methods inside a controller when it may otherwise be better to avoid them or move them to a factory. Consider using `$scope` in a factory, or if in a controller just when needed. For example when publishing and subscribing events using [`$emit`](https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$emit), [`$broadcast`](https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$broadcast), or [`$on`](https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$on) consider moving these uses to a factory and invoke from the controller. 
+  *Почему?*: Избавляет от искушения использования методов `$scope` внутри контроллера, когда это не требуется явно, и это позволяет перенести методы в фабрику(factory). Предпочтительнее использовать `$scope` в фабрике, в контроллере же только если это необходимо. Например, когда мы подписываемся и рассылаем события с помощью [`$emit`](https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$emit), [`$broadcast`](https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$broadcast), or [`$on`](https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$on) перенесите эти сервисы в фабрику, и вызываете методы фабрики в контроллере.
 
   ```javascript
-  /* avoid */
+  /* избегайте этого */
   function Customer($scope) {
       $scope.name = {};
       $scope.sendMessage = function() { };
@@ -328,14 +328,14 @@
   ```
 
   ```javascript
-  /* recommended - but see next section */
+  /* рекомендовано - но изучите следующую секцию */
   function Customer() {
       this.name = {};
       this.sendMessage = function() { };
   }
   ```
 
-### controllerAs with vm
+### Синтаксис controllerAs с переменной vm
 ###### [Style [Y032](#style-y032)]
 
   - Use a capture variable for `this` when using the `controllerAs` syntax. Choose a consistent variable name such as `vm`, which stands for ViewModel.
