@@ -281,14 +281,14 @@
 
 **[Back to top](#table-of-contents)**
 
-## Controllers
+## Контроллеры
 
-### controllerAs View Syntax
+### Синтаксис controllerAs в представлении
 ###### [Style [Y030](#style-y030)]
 
-  - Use the [`controllerAs`](http://www.johnpapa.net/do-you-like-your-angular-controllers-with-or-without-sugar/) syntax over the `classic controller with $scope` syntax. 
+  - Используйте синтаксис [`controllerAs`](http://www.johnpapa.net/do-you-like-your-angular-controllers-with-or-without-sugar/), который работает как надстройка синтаксиса `классический контроллер с $scope`. 
 
-  *Why?*: Controllers are constructed, "newed" up, and provide a single new instance, and the `controllerAs` syntax is closer to that of a JavaScript constructor than the `classic $scope syntax`. 
+  *Почему?*: Контроллер создается, также как с ключевым словом "new" и затем предоставляется единственный экземпляр объекта, то есть синтаксис `controllerAs` намного ближе и похожее на конструктор языка JavaScript, чем `классический синтаксис $scope`.
 
   *Why?*: It promotes the use of binding to a "dotted" object in the View (e.g. `customer.name` instead of `name`), which is more contextual, easier to read, and avoids any reference issues that may occur without "dotting".
 
