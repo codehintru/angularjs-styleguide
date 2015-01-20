@@ -384,7 +384,7 @@
   }
   ```
 
-### Привязываемые члены наверх
+### Привязываемые Члены Сверху
 ###### [Style [Y033](#style-y033)]
 
   - Помещайте привязываемые члены в верхней части контроллера, в алфавитном порядке, и не раскидывайте их в коде контроллера где попало.
@@ -473,25 +473,25 @@
       vm.title = 'Sessions';
   ```
 
-### Function Declarations to Hide Implementation Details
+### Определения Функций Для Скрытия Деталей Реализации
 ###### [Style [Y034](#style-y034)]
 
-  - Use function declarations to hide implementation details. Keep your bindable members up top. When you need to bind a function in a controller, point it to a function declaration that appears later in the file. This is tied directly to the section Bindable Members Up Top. For more details see [this post](http://www.johnpapa.net/angular-function-declarations-function-expressions-and-readable-code).
+  - Используйте определения функций для скрытия деталей реализации. Держите свои привязываемые члены наверху. Если нужно в контроллере сделать функцию привязываемой, укажите это в группе привязываемых членов и ссылайтесь на данную функцию, которая реализована ниже. Это подробно описано в секции Привязываемые Члены Сверху. Подробнее смотрите  [здесь](http://www.johnpapa.net/angular-function-declarations-function-expressions-and-readable-code).
 
-    *Why?*: Placing bindable members at the top makes it easy to read and helps you instantly identify which members of the controller can be bound and used in the View. (Same as above.)
+    *Почему?*: Размещение привязываемых членов наверху делает код читабельнее, и позволяет мгновенно определить какие члены привязаны и используются в представлении. (Выше описано тоже самое.)  
 
-    *Why?*: Placing the implementation details of a function later in the file moves that complexity out of view so you can see the important stuff up top.
+    *Почему?*: Размещение деталей реализации функции внизу скрывает эту сложность ниже и таким образом все важные вещи находятся на видном месте сверху.
 
-    *Why?*: Function declaration are hoisted so there are no concerns over using a function before it is defined (as there would be with function expressions).
+    *Почему?*: Функции определены как hoisted (определены в самом верху области видимости), поэтому не надо заботиться об их использовании перед объявлением, так как это было бы с объявлениями выражений функций (function expressions).
 
-    *Why?*: You never have to worry with function declarations that moving `var a` before `var b` will break your code because `a` depends on `b`.
+    *Почему?*: Вам не надо волноваться, о том в каком порядке объявлены функции. Также как и изменение порядка функций не будет ломать код из-за зависимостей. 
 
-    *Why?*: Order is critical with function expressions 
+    *Почему?*: С выражениями функций(function expressions) порядок будет критичен.
 
   ```javascript
   /** 
-   * avoid 
-   * Using function expressions.
+   * избегайте этого 
+   * Использование выражений функций (function expressions).
    */
   function Avengers(dataservice, logger) {
       var vm = this;
