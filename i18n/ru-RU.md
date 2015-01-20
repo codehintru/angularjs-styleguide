@@ -384,17 +384,17 @@
   }
   ```
 
-### Bindable Members Up Top
+### Привязываемые члены наверх
 ###### [Style [Y033](#style-y033)]
 
-  - Place bindable members at the top of the controller, alphabetized, and not spread through the controller code.
+  - Помещайте привязываемые члены в верхней части контроллера, в алфавитном порядке, и не раскидывайте эти члены в коде контроллера где попало.
 
-    *Why?*: Placing bindable members at the top makes it easy to read and helps you instantly identify which members of the controller can be bound and used in the View. 
+    *Почему?*: Размещение привязываемых членов наверху упрощает чтение и позволяет мгновенно определить какие члены контроллера привязаны и используются в представлении.
 
-    *Why?*: Setting anonymous functions in-line can be easy, but when those functions are more than 1 line of code they can reduce the readability. Defining the functions below the bindable members (the functions will be hoisted) moves the implementation details down, keeps the bindable members up top, and makes it easier to read. 
+    *Почему?*: Написание анонимных функций по месту использования может конечно и проще, но когда такие функции содержат много строк кода, то это значительно снижает читабельность кода. Определение функций (функции подняты наверх области видимости - hoisted) ниже привязываемых членов переносит детали реализации вниз. А привязываемые члены наверху повышают читабельность кода. 
 
   ```javascript
-  /* avoid */
+  /* избегайте этого */
   function Sessions() {
       var vm = this;
 
@@ -412,7 +412,7 @@
   ```
 
   ```javascript
-  /* recommended */
+  /* рекомендовано */
   function Sessions() {
       var vm = this;
 
