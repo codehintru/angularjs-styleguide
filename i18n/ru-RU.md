@@ -338,12 +338,12 @@
 ### Синтаксис controllerAs с переменной vm
 ###### [Style [Y032](#style-y032)]
 
-  - Use a capture variable for `this` when using the `controllerAs` syntax. Choose a consistent variable name such as `vm`, which stands for ViewModel.
+  - Сохраните `this` в переменную, когда используете синтаксис `controllerAs`. Выберите постоянное имя для переменной, такое как `vm`, что будет значить ViewModel.
   
-  *Why?*: The `this` keyword is contextual and when used within a function inside a controller may change its context. Capturing the context of `this` avoids encountering this problem.
+  *Почему?*: Ключевое слово `this` контекстное, и когда его потребуется использовать внутри любой другой функции контроллера, то его содержимое будет другим. Сохранение `this` в переменной `vm` позволит избежать этих проблем.
 
   ```javascript
-  /* avoid */
+  /* избегайте этого */
   function Customer() {
       this.name = {};
       this.sendMessage = function() { };
@@ -351,7 +351,7 @@
   ```
 
   ```javascript
-  /* recommended */
+  /* рекомендовано */
   function Customer() {
       var vm = this;
       vm.name = {};
@@ -359,14 +359,14 @@
   }
   ```
 
-  Note: You can avoid any [jshint](http://www.jshint.com/) warnings by placing the comment below above the line of code. However it is not needed when the function is named using UpperCasing, as this convention means it is a constructor function, which is what a controller is in Angular.
+  Замечание: Вы можете избежать любые [jshint](http://www.jshint.com/) предупреждения, если разместите над строкой кода комментарий, приведенный ниже в примере. Это не требуется, если функция названа с помощью ВерхнегоРегистра(UpperCasing), так как согласно этой конвециии, это значит, что функция является контруктором контроллера Angular.
 
   ```javascript
   /* jshint validthis: true */
   var vm = this;
   ```
 
-  Note: When creating watches in a controller using `controller as`, you can watch the `vm.*` member using the following syntax. (Create watches with caution as they add more load to the digest cycle.)
+  Замечание: Когда создаете наблюдающие функции(watcher) в контроллерах типа `controller as`, вы можете наблюдать за переменной следующего вида `vm.*`. (Создавайте наблюдающие функции с предупреждением, что они создают дополнительную нагрузку на цикл digest.)
 
   ```html
   <input ng-model="vm.title"/>
