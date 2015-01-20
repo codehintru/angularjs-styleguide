@@ -439,21 +439,21 @@
 
     ![Controller Using "Above the Fold"](https://raw.githubusercontent.com/johnpapa/angularjs-styleguide/master/assets/above-the-fold-1.png)
 
-  Note: If the function is a 1 liner consider keeping it right up top, as long as readability is not affected.
+  Замечание: Если функция однострочная, то разместите ее и наверху, но так чтобы это не усложняло читабельность.
 
   ```javascript
-  /* avoid */
+  /* избегайте этого */
   function Sessions(data) {
       var vm = this;
 
       vm.gotoSession = gotoSession;
       vm.refresh = function() {
-          /** 
-           * lines 
-           * of
-           * code
-           * affects
-           * readability
+          /**
+           * эти  
+           * строки  
+           * кода
+           * ухудшают
+           * читабельность
            */
       };
       vm.search = search;
@@ -462,12 +462,12 @@
   ```
 
   ```javascript
-  /* recommended */
+  /* рекомендовано */
   function Sessions(dataservice) {
       var vm = this;
 
       vm.gotoSession = gotoSession;
-      vm.refresh = dataservice.refresh; // 1 liner is OK
+      vm.refresh = dataservice.refresh; // одна строка, все OK
       vm.search = search;
       vm.sessions = [];
       vm.title = 'Sessions';
