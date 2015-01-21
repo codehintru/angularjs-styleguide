@@ -670,14 +670,14 @@
 
 **[Back to top](#table-of-contents)**
 
-## Services
+## Сервисы
 
-### Singletons
+### Синглтоны
 ###### [Style [Y040](#style-y040)]
 
-  - Services are instantiated with the `new` keyword, use `this` for public methods and variables. Since these are so similar to factories, use a factory instead for consistency. 
+  - Сервисы создаются с помощью ключевого слова `new`, используйте `this` для публичных методов и переменных. Так как они очень похожи на фабрики, то используйте фабрики для согласованности.
 
-    Note: [All AngularJS services are singletons](https://docs.angularjs.org/guide/services). This means that there is only one instance of a given service per injector.
+    Замечание: [Все AngularJS сервисы являются синглтонами](https://docs.angularjs.org/guide/services). Это значит, что создается только один экземпляр сервиса на один инжектор.
 
   ```javascript
   // service
