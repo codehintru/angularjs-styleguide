@@ -880,23 +880,23 @@
 
 **[Back to top](#table-of-contents)**
 
-## Data Services
+## Сервисы данных
 
-### Separate Data Calls
+### Отделите вызовы данных
 ###### [Style [Y060](#style-y060)]
 
-  - Refactor logic for making data operations and interacting with data to a factory. Make data services responsible for XHR calls, local storage, stashing in memory, or any other data operations.
+  - Делайте рефакторинг логики работы с данными и взаимодействия этих данных с фабрикой. Создавайте сервисы данных ответственных за вызовы XHR, локальное хранилище(local storage), работу с памятью или за любые другие операции с данными.  
 
-    *Why?*: The controller's responsibility is for the presentation and gathering of information for the view. It should not care how it gets the data, just that it knows who to ask for it. Separating the data services moves the logic on how to get it to the data service, and lets the controller be simpler and more focused on the view.
+    *Почему?*: Ответственность контроллера - это предоставление или сбор информации для представления. Он не должен заботиться о том, как работать с данными, он только должен знать кого попросить об этом. В сервисы для данных переносится вся логика работы с данными. Это делает контроллер более простым и более сфокусированным для работы с представлением.
 
-    *Why?*: This makes it easier to test (mock or real) the data calls when testing a controller that uses a data service.
+    *Почему?*: Это позволяет более проще тестировать (фиктивно или реально) вызовы данных в контроллере, который использует сервис для данных. 
 
-    *Why?*: Data service implementation may have very specific code to handle the data repository. This may include headers, how to talk to the data, or other services such as $http. Separating the logic into a data service encapsulates this logic in a single place hiding the implementation from the outside consumers (perhaps a controller), also making it easier to change the implementation.
+    *Почему?*: Реализация сервиса данных может иметь очень специфичный код для операций с хранилищем данных. Могут использоваться заголовки для взаимодействовия с данными, или другие сервисы типа $http. Логика в сервисе данных инкапсулируется в одном месте и скрывает реализацию для внешних потребителей (контроллеров), также будет гораздо проще изменить реализацию в случае необходимости.
 
   ```javascript
-  /* recommended */
+  /* рекомендовано */
 
-  // dataservice factory
+  // фабрика сервиса данных
   angular
       .module('app.core')
       .factory('dataservice', dataservice);
@@ -924,12 +924,12 @@
   }
   ```
     
-    Note: The data service is called from consumers, such as a controller, hiding the implementation from the consumers, as shown below.
+    Замечание: Сервис данных вызывается потребителем (контроллером), и скрывает реализацию от потребителя. Это показано ниже.
 
   ```javascript
-  /* recommended */
+  /* рекомендовано */
 
-  // controller calling the dataservice factory
+  // контроллер вызывает фабрику сервиса данных
   angular
       .module('app.avengers')
       .controller('Avengers', Avengers);
