@@ -606,12 +606,12 @@
   }
   ```
 
-### Keep Controllers Focused
+### Один Контроллер - Одно Представление
 ###### [Style [Y037](#style-y037)]
 
-  - Define a controller for a view, and try not to reuse the controller for other views. Instead, move reusable logic to factories and keep the controller simple and focused on its view. 
+  - Определяйте контроллер для одного представления, и не пытайтесь использовать этот контроллер для других представлений. Вместо этого, выносите повторно используемую логику в фабрики. Старайтесь держать контроллер простым и сфокусированным только на свое представление.
 
-    *Why?*: Reusing controllers with several views is brittle and good end to end (e2e) test coverage is required to ensure stability across large applications.
+    *Почему?*: Использование контроллера с несколькими представлениями хрупко и ненадежно. А для больших приложений  требуется хорошее покрытие тестами end to end (e2e) для проверки стабильности. 
 
 ### Assigning Controllers
 ###### [Style [Y038](#style-y038)]
