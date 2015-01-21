@@ -517,13 +517,13 @@
   }
   ```
 
-  Заметьте, в предыдущем примере важный материал размещен в контроллере в разных местах. In the example below, notice that the important stuff is up top. For example, the members bound to the controller such as `vm.avengers` and `vm.title`. The implementation details are down below. This is just easier to read.
+  Заметьте, в предыдущем примере важный материал размещен в контроллере в разных местах. А в примере ниже, все важные моменты размещены сверху, в нашем случае, это члены, привязанные к контроллеру такие как `vm.avengers` и `vm.title`. Подробности реализации смещены вниз. Такой код проще читать.
 
   ```javascript
   /*
-   * recommend
-   * Using function declarations
-   * and bindable members up top.
+   * рекомендовано
+   * Объявления функций и
+   * привязанные члены смещены вверх.
    */
   function Avengers(dataservice, logger) {
       var vm = this;
