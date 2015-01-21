@@ -709,33 +709,33 @@
 
 **[Back to top](#table-of-contents)**
 
-## Factories
+## Фабрики
 
-### Single Responsibility
+### Единственная Обязанность (Single Responsibility)
 ###### [Style [Y050](#style-y050)]
 
-  - Factories should have a [single responsibility](http://en.wikipedia.org/wiki/Single_responsibility_principle), that is encapsulated by its context. Once a factory begins to exceed that singular purpose, a new factory should be created.
+  - Фабрики дожны иметь [единственную обязанность](http://en.wikipedia.org/wiki/Single_responsibility_principle), это следует из их контекста. Если фабрика начинает превышать ту цель для которой она создана, то нужно создать другую фабрику. 
 
-### Singletons
+### Синглтон
 ###### [Style [Y051](#style-y051)]
 
-  - Factories are singletons and return an object that contains the members of the service.
+  - Фабрики это синглтоны, которые возвращают объект, содержащий свойства и методы сервиса.
 
-    Note: [All AngularJS services are singletons](https://docs.angularjs.org/guide/services).
+    Замечание: [Все AngularJS сервисы являются синглтонами](https://docs.angularjs.org/guide/services).
 
-### Accessible Members Up Top
+### Доступные Члены Наверх
 ###### [Style [Y052](#style-y052)]
 
-  - Expose the callable members of the service (it's interface) at the top, using a technique derived from the [Revealing Module Pattern](http://addyosmani.com/resources/essentialjsdesignpatterns/book/#revealingmodulepatternjavascript). 
+  - Помещайте вызываемые члены сервиса (интерфейс) наверх, используя технику  [Revealing Module Pattern](http://addyosmani.com/resources/essentialjsdesignpatterns/book/#revealingmodulepatternjavascript). 
 
-    *Why?*: Placing the callable members at the top makes it easy to read and helps you instantly identify which members of the service can be called and must be unit tested (and/or mocked). 
+    *Почему?*: Размещение вызываемых членов в верхней части улучшает читабельность и дает вам возможность быстро определить какие члены сервиса могут быть вызваны и должны быть модульно оттестированы (либо фиктивно имплементированы - mocked).   
+    
+    *Почему?*: Это особенно полезно, когда файл становится очень длинным, и вынуждает прокручивать текст кода, чтобы посмотреть, какие методы или свойства сервис предоставляет.
 
-    *Why?*: This is especially helpful when the file gets longer as it helps avoid the need to scroll to see what is exposed.
-
-    *Why?*: Setting functions as you go can be easy, but when those functions are more than 1 line of code they can reduce the readability and cause more scrolling. Defining the callable interface via the returned service moves the implementation details down, keeps the callable interface up top, and makes it easier to read.
+    *Почему?*: Размещение функций в обычном прямом порядке может быть и проще, но когда эти функции становятся многострочными, это снижает читабельность и вынуждает много скроллить. Определяя вызываемый интерфейс(в виде возвращаемого сервиса), вы убираете детали реализации вниз. А размещенный сверху интерфейс улучшает читабельность. 
 
   ```javascript
-  /* avoid */
+  /* избегайте этого */
   function dataService() {
     var someValue = '';
     function save() { 
@@ -754,7 +754,7 @@
   ```
 
   ```javascript
-  /* recommended */
+  /* рекомендовано */
   function dataService() {
       var someValue = '';
       var service = {
