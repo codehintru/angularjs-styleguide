@@ -780,48 +780,48 @@
 
     ![Factories Using "Above the Fold"](https://raw.githubusercontent.com/johnpapa/angularjs-styleguide/master/assets/above-the-fold-2.png)
 
-### Function Declarations to Hide Implementation Details
+### Определения Функций для Скрытия Деталей Реализации
 ###### [Style [Y053](#style-y053)]
 
-  - Use function declarations to hide implementation details. Keep your accessible members of the factory up top. Point those to function declarations that appears later in the file. For more details see [this post](http://www.johnpapa.net/angular-function-declarations-function-expressions-and-readable-code).
+  - Используйте определения функций, чтобы скрыть детали реализации. Держите вызываемые члены фабрики в верхней части. Свяжите их с определениями функций, которые распололжены ниже в файле. Подробную информацию смотрите [здесь](http://www.johnpapa.net/angular-function-declarations-function-expressions-and-readable-code).
 
-    *Why?*: Placing accessible members at the top makes it easy to read and helps you instantly identify which functions of the factory you can access externally.
+    *Почему?*: Размещение вызываемых членов в верхней части улучшает читабельность и помогает быстро определить какие функции фабрики могут быть вызваны извне. 
 
-    *Why?*: Placing the implementation details of a function later in the file moves that complexity out of view so you can see the important stuff up top.
+    *Почему?*: Размещение функций с деталями реализации в нижней части файла выносит сложные вещи из поля зрения, так что только важные детали вы видите в верхней части файла.
 
-    *Why?*: Function declaration are hoisted so there are no concerns over using a function before it is defined (as there would be with function expressions).
+    *Почему?*: Функции определены в самом верху области видимости (hoisted), то есть их можно вызывать до их определения. (что было бы не возможно с выражениями функций)
 
-    *Why?*: You never have to worry with function declarations that moving `var a` before `var b` will break your code because `a` depends on `b`.
+    *Почему?*: Вам не надо беспокоится о порядке определений функций. Перестановка зависимых друг от друга функций не ломает код.
 
-    *Why?*: Order is critical with function expressions 
+    *Why?*: А для выражений функций порядок критичен.
 
   ```javascript
   /**
-   * avoid
-   * Using function expressions
+   * избегайте этого
+   * Использование выражений функций
    */
    function dataservice($http, $location, $q, exception, logger) {
       var isPrimed = false;
       var primePromise;
 
       var getAvengers = function() {
-          // implementation details go here
+          // детали реализации здесь
       };
 
       var getAvengerCount = function() {
-          // implementation details go here
+          // детали реализации здесь
       };
 
       var getAvengersCast = function() {
-         // implementation details go here
+         // детали реализации здесь
       };
 
       var prime = function() {
-         // implementation details go here
+         // детали реализации здесь
       };
 
       var ready = function(nextPromises) {
-          // implementation details go here
+          // детали реализации здесь
       };
 
       var service = {
@@ -837,9 +837,9 @@
 
   ```javascript
   /**
-   * recommended
-   * Using function declarations
-   * and accessible members up top.
+   * рекомендовано
+   * Использование определений функций
+   * и вызываемые члены расположены в верхней части.
    */
   function dataservice($http, $location, $q, exception, logger) {
       var isPrimed = false;
@@ -857,23 +857,23 @@
       ////////////
 
       function getAvengers() {
-          // implementation details go here
+          // детали реализации здесь
       }
 
       function getAvengerCount() {
-          // implementation details go here
+          // детали реализации здесь
       }
 
       function getAvengersCast() {
-          // implementation details go here
+          // детали реализации здесь
       }
 
       function prime() {
-          // implementation details go here
+          // детали реализации здесь
       }
 
       function ready(nextPromises) {
-          // implementation details go here
+          // детали реализации здесь
       }
   }
   ```
