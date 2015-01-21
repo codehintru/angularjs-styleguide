@@ -548,20 +548,20 @@
   }
   ```
 
-### Defer Controller Logic
+### Логика Контроллера Отдельно
 ###### [Style [Y035](#style-y035)]
 
-  - Defer logic in a controller by delegating to services and factories.
+  - Переносите логику контроллера в сервисы и фабрики.
 
-    *Why?*: Logic may be reused by multiple controllers when placed within a service and exposed via a function.
+    *Почему?*: Логика может использоваться несколькими контроллерами, если она помещена в сервис и выставлена в виде функции.
 
-    *Why?*: Logic in a service can more easily be isolated in a unit test, while the calling logic in the controller can be easily mocked.
+    *Почему?*: Вся логика в сервисе может быть легко изолирована в модульном тесте, а вызовы этой логики в контроллере могут фиктивно реализованы (mocked).
 
-    *Why?*: Removes dependencies and hides implementation details from the controller.
+    *Почему?*:  Из контроллера удаляются зависимости и скрываются подробности реализации.
 
   ```javascript
 
-  /* avoid */
+  /* избегайте этого */
   function Order($http, $q, config, userInfo) {
       var vm = this;
       vm.checkCredit = checkCredit;
@@ -591,7 +591,7 @@
   ```
 
   ```javascript
-  /* recommended */
+  /* рекомендовано */
   function Order(creditService) {
       var vm = this;
       vm.checkCredit = checkCredit;
