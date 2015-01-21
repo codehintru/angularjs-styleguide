@@ -613,17 +613,17 @@
 
     *Почему?*: Использование контроллера с несколькими представлениями хрупко и ненадежно. А для больших приложений  требуется хорошее покрытие тестами end to end (e2e) для проверки стабильности. 
 
-### Assigning Controllers
+### Присваивание Контроллеров
 ###### [Style [Y038](#style-y038)]
 
-  - When a controller must be paired with a view and either component may be re-used by other controllers or views, define controllers along with their routes. 
+  - Когда контроллер и его представление уже создано, и если нужно что-то повторно использовать (контроллер и представление), определяйте экземпляр контроллера вместе с его маршрутом (route).
 
-    Note: If a View is loaded via another means besides a route, then use the `ng-controller="Avengers as vm"` syntax. 
+    Замечание: Если представление загружается не через маршрут, тогда используйте синтаксис `ng-controller="Avengers as vm"`.
 
-    *Why?*: Pairing the controller in the route allows different routes to invoke different pairs of controllers and views. When controllers are assigned in the view using [`ng-controller`](https://docs.angularjs.org/api/ng/directive/ngController), that view is always associated with the same controller.
+    *Почему?*: Указание экземпляра контроллера в определении маршрута позволяет различным маршрутам вызывать различные пары контроллеров и представлений. А когда контроллеры указаны в представлении с помощью [`ng-controller`](https://docs.angularjs.org/api/ng/directive/ngController), то представление будет всегда ассоциировано с одним и тем же контроллером. 
 
  ```javascript
-  /* avoid - when using with a route and dynamic pairing is desired */
+  /* избегайте этого - когда используется маршрут и необходимо динамическое назначение контроллера и представления */
 
   // route-config.js
   angular
@@ -645,7 +645,7 @@
   ```
 
   ```javascript
-  /* recommended */
+  /* рекомендовано */
 
   // route-config.js
   angular
