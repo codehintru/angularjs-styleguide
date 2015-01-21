@@ -958,28 +958,28 @@
   }      
   ```
 
-### Return a Promise from Data Calls
+### Возвращайте Promise при Запросах Данных
 ###### [Style [Y061](#style-y061)]
 
-  - When calling a data service that returns a promise such as $http, return a promise in your calling function too.
+  - Если сервис данных возвращает promise типа $http, то в вызывающей функции возвращайте promise тоже.
 
-    *Why?*: You can chain the promises together and take further action after the data call completes and resolves or rejects the promise.
+    *Почему?*: Вы можете объединить в цепочку объекты promise, и после того как вызов данных закончится, выполнить дальнейшие действия принятия или отклонения объекта promise.  
 
   ```javascript
-  /* recommended */
+  /* рекомендовано */
 
   activate();
 
   function activate() {
       /**
-       * Step 1
-       * Ask the getAvengers function for the
-       * avenger data and wait for the promise
+       * Шаг 1
+       * Запрашиваем функцию getAvengers function 
+       * для получения данных и ждем promise 
        */
       return getAvengers().then(function() {
           /**
-           * Step 4
-           * Perform an action on resolve of final promise
+           * Шаг 4
+           * Выполняем действие принятия финального объекта promise
            */
           logger.info('Activated Avengers View');
       });
@@ -987,15 +987,15 @@
 
   function getAvengers() {
         /**
-         * Step 2
-         * Ask the data service for the data and wait
-         * for the promise
+         * Шаг 2
+         * Запрашиваем сервис для данных 
+         * и ждем promise
          */
         return dataservice.getAvengers()
             .then(function(data) {
                 /**
-                 * Step 3
-                 * set the data and resolve the promise
+                 * Шаг 3
+                 * инициализируем данные и принимаем promise
                  */
                 vm.avengers = data;
                 return vm.avengers;
