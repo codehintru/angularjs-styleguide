@@ -1097,12 +1097,12 @@
 
     Замечание: Существует много способов для именований директив, особенно это зависит от широты области использования (локально или глобально). Выбирайте тот способ, который определяет директиву и ее файл четко и ясно. Нексолько примеров будет ниже, но в основном смотрите рекомендации в секции именований. 
 
-### Manipulate DOM in a Directive
+### Манипулирование Элементами DOM в Директиве
 ###### [Style [Y072](#style-y072)]
 
-  - When manipulating the DOM directly, use a directive. If alternative ways can be used such as using CSS to set styles or the [animation services](https://docs.angularjs.org/api/ngAnimate), Angular templating, [`ngShow`](https://docs.angularjs.org/api/ng/directive/ngShow) or [`ngHide`](https://docs.angularjs.org/api/ng/directive/ngHide), then use those instead. For example, if the directive simply hides and shows, use ngHide/ngShow. 
+  - Используйте директивы, если нужно манипулировать элементами DOM напрямую. Но если существуют альтернативные способы, то используйте лучше их. Например для изменения стилей используйте CSS, для эффектов [сервисы анимации](https://docs.angularjs.org/api/ngAnimate), для управления видимостью используйте [`ngShow`](https://docs.angularjs.org/api/ng/directive/ngShow) и [`ngHide`](https://docs.angularjs.org/api/ng/directive/ngHide). 
 
-    *Why?*: DOM manipulation can be difficult to test, debug, and there are often better ways (e.g. CSS, animations, templates)
+    *Почему?*: Манипулирование элементами DOM тяжело тестить, отлаживать, и зачастую существуют более лучшие способы для реализации поставленной задачи (например CSS, анимации, шаблоны)
 
 ### Provide a Unique Directive Prefix
 ###### [Style [Y073](#style-y073)]
