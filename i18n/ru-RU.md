@@ -1005,51 +1005,51 @@
 
     **[Back to top](#table-of-contents)**
 
-## Directives
-### Limit 1 Per File
+## Директивы
+### Одна Директива - Один Файл  
 ###### [Style [Y070](#style-y070)]
 
-  - Create one directive per file. Name the file for the directive. 
+  - Создавайте только одну директиву в файле. Называйте файл именем директивы.
 
-    *Why?*: It is easy to mash all the directives in one file, but difficult to then break those out so some are shared across apps, some across modules, some just for one module. 
+    *Почему?*: Конечно можно поместить директивы в один файл. Но потом их трудно будет разделить по приложениям, и по модулям. Например, нужна будет только одна из директив для определенного модуля.
 
-    *Why?*: One directive per file is easy to maintain.
+    *Почему?*: Одну директиву в файле легче поддерживать.
 
   ```javascript
-  /* avoid */
+  /* избегайте этого */
   /* directives.js */
 
   angular
       .module('app.widgets')
 
-      /* order directive that is specific to the order module */
+      /* директива для заказа, которая специфична для модуля заказов */
       .directive('orderCalendarRange', orderCalendarRange)
 
-      /* sales directive that can be used anywhere across the sales app */
+      /* директива продажи, которая может быть использована везде в модуле продаж */
       .directive('salesCustomerInfo', salesCustomerInfo)
 
-      /* spinner directive that can be used anywhere across apps */
+      /* директива крутилки (spinner), которая может быть использована во всех модулях */
       .directive('sharedSpinner', sharedSpinner);
 
   function orderCalendarRange() {
-      /* implementation details */
+      /* детали реализации */
   }
 
   function salesCustomerInfo() {
-      /* implementation details */
+      /* детали реализации */
   }
 
   function sharedSpinner() {
-      /* implementation details */
+      /* детали реализации */
   }
   ```
 
   ```javascript
-  /* recommended */
+  /* рекомендовано */
   /* calendarRange.directive.js */
 
   /**
-   * @desc order directive that is specific to the order module at a company named Acme
+   * @desc директива заказа, которая специфична модулю заказов в компании Acme
    * @example <div acme-order-calendar-range></div>
    */
   angular
@@ -1057,16 +1057,16 @@
       .directive('acmeOrderCalendarRange', orderCalendarRange);
 
   function orderCalendarRange() {
-      /* implementation details */
+      /* детали реализации */
   }
   ```
 
   ```javascript
-  /* recommended */
+  /* рекомендовано */
   /* customerInfo.directive.js */
 
   /**
-   * @desc spinner directive that can be used anywhere across the sales app at a company named Acme
+   * @desc директива продажи, которая может быть использована везде в модуле продаж компании Acme
    * @example <div acme-sales-customer-info></div>
    */    
   angular
@@ -1079,11 +1079,11 @@
   ```
 
   ```javascript
-  /* recommended */
+  /* рекомендовано */
   /* spinner.directive.js */
 
   /**
-   * @desc spinner directive that can be used anywhere across apps at a company named Acme
+   * @desc директива крутилки (spinner), которая может быть использована во всех модулях компании Acme
    * @example <div acme-shared-spinner></div>
    */
   angular
@@ -1091,11 +1091,11 @@
       .directive('acmeSharedSpinner', sharedSpinner);
 
   function sharedSpinner() {
-      /* implementation details */
+      /* детали реализации */
   }
   ```
 
-    Note: There are many naming options for directives, especially since they can be used in narrow or wide scopes. Choose one that makes the directive and it's file name distinct and clear. Some examples are below, but see the naming section for more recommendations.
+    Замечание: Существует много способов для именований директив, особенно это зависит от широты области использования (локально или глобально). Выбирайте тот способ, который определяет директиву и ее файл четко и ясно. Нексолько примеров будет ниже, но в основном смотрите рекомендации в секции именований. 
 
 ### Manipulate DOM in a Directive
 ###### [Style [Y072](#style-y072)]
