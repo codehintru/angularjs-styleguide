@@ -1113,24 +1113,24 @@
 
     Замечание: Не используйте префикс `ng-` для своих директив, так как он зарезервирован для директив AngularJS. Также исследуйте префиксы широко используемых директив для избежания конфликтов имен, например префикс `ion-` используется для директив [Ionic Framework](http://ionicframework.com/).
     
-### Restrict to Elements and Attributes
+### Ограничивайте Элементы и Атрибуты
 ###### [Style [Y074](#style-y074)]
 
-  - When creating a directive that makes sense as a stand-alone element, allow restrict `E` (custom element) and optionally restrict `A` (custom attribute). Generally, if it could be its own control, `E` is appropriate. General guideline is allow `EA` but lean towards implementing as an element when its stand-alone and as an attribute when it enhances its existing DOM element.
+  - При создании директивы, которая планируется как самостоятельный элемент, применяйте ограничение `E` (разработано как элемент) или по необходимости ограничение `A` (разработано как атрибут). В основном, если директива разрабатывается как элемент, ограничения `E` вполне достаточно. Хотя AngularJS позволяет использовать `EA`, но все же лучше определится, реализовывать директиву, либо как самостоятельный отдельный элемент, либо как атрибут для улучшения функциональности существующего DOM-элемента. 
 
-    *Why?*: It makes sense.
+    *Почему?*: Это имееет смысл.
 
-    *Why?*: While we can allow the directive to be used as a class, if the directive is truly acting as an element it makes more sense as an element or at least as an attribute.
+    *Почему?*: Конечно мы можем использовать директиву в атрибуте class, но если директива действует как элемент, то лучше объявлять ее как элемент, ну или по крайней мере как атрибут.
 
-    Note: EA is the default for AngularJS 1.3 +
+    Замечание: EA используется по умолчанию для AngularJS 1.3 +
 
   ```html
-  <!-- avoid -->
+  <!-- избегайте этого -->
   <div class="my-calendar-range"></div>
   ```
 
   ```javascript
-  /* avoid */
+  /* избегайте этого */
   angular
       .module('app.widgets')
       .directive('myCalendarRange', myCalendarRange);
@@ -1150,13 +1150,13 @@
   ```
 
   ```html
-  <!-- recommended -->
+  <!-- рекомендовано -->
   <my-calendar-range></my-calendar-range>
   <div my-calendar-range></div>
   ```
   
   ```javascript
-  /* recommended */
+  /* рекомендовано */
   angular
       .module('app.widgets')
       .directive('myCalendarRange', myCalendarRange);
@@ -1175,7 +1175,7 @@
   }
   ```
 
-### Directives and ControllerAs
+### Директивы и ControllerAs
 ###### [Style [Y075](#style-y075)]
 
   - Use `controller as` syntax with a directive to be consistent with using `controller as` with view and controller pairings.
