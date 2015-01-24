@@ -1104,15 +1104,15 @@
 
     *Почему?*: Манипулирование элементами DOM тяжело тестить, отлаживать, и зачастую существуют более лучшие способы для реализации поставленной задачи (например CSS, анимации, шаблоны)
 
-### Provide a Unique Directive Prefix
+### Добавляйте Директивам Уникальный Префикс
 ###### [Style [Y073](#style-y073)]
 
-  - Provide a short, unique and descriptive directive prefix such as `acmeSalesCustomerInfo` which is declared in HTML as `acme-sales-customer-info`.
+  - Добавляйте директивам короткий, уникальный, пояснительный префикс, такой как `acmeSalesCustomerInfo`, которая будет объявлена в HTML как `acme-sales-customer-info`.
 
-    *Why?*: The unique short prefix identifies the directive's context and origin. For example a prefix of `cc-` may indicate that the directive is part of a CodeCamper app while `acme-` may indicate a directive for the Acme company. 
+    *Почему?*: Уникальный короткий префикс говорит о контексте и происхождении директивы. Например, префикс `cc-` может рассказать нам, что директива является частью приложения CodeCamper, а `acme-` это директива для компании Acme. 
 
-    Note: Avoid `ng-` as these are reserved for AngularJS directives. Research widely used directives to avoid naming conflicts, such as `ion-` for the [Ionic Framework](http://ionicframework.com/). 
-
+    Замечание: Не используйте префикс `ng-` для своих директив, так как он зарезервирован для директив AngularJS. Также исследуйте префиксы широко используемых директив для избежания конфликтов имен, например префикс `ion-` используется для директив [Ionic Framework](http://ionicframework.com/).
+    
 ### Restrict to Elements and Attributes
 ###### [Style [Y074](#style-y074)]
 
