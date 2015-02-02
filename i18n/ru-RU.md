@@ -1221,7 +1221,7 @@
   ExampleController.$inject = ['$scope'];
 
   function ExampleController($scope) {
-      // Внедрение $scope сразу в сравнение
+      // Внедрение $scope сразу для параметра сравнения
       var vm = this;
 
       vm.min = 3; 
@@ -1241,21 +1241,21 @@
 
 **[Back to top](#table-of-contents)**
 
-## Resolving Promises for a Controller
+##  Работа с Объектами Promise в Контроллерах
 
-### Controller Activation Promises
+###  Активация объектов promise в контроллере
 ###### [Style [Y080](#style-y080)]
 
-  - Resolve start-up logic for a controller in an `activate` function.
+  - Размещайте стартовую начальную логику для контроллера в функции `activate`.   
      
-    *Why?*: Placing start-up logic in a consistent place in the controller makes it easier to locate, more consistent to test, and helps avoid spreading out the activation logic across the controller.
+    *Почему?*: Размещение стартовой логики в согласованом месте контроллера позволяет ее быстрее находить, более согласованно тестить, и позволить не разбразывать по всему контроллеру логику активации.
 
-    *Why?*: The controller `activate` makes it convenient to re-use the logic for a refresh for the controller/View, keeps the logic together, gets the user to the View faster, makes animations easy on the `ng-view` or `ui-view`, and feels snappier to the user.
+    *Почему?*: Функция `activate` делает удобным повторное использование логики для обновления контроллера/представления, держит все логику вместе, делает более быстрой работу пользователя с представлением, делает анимацию более простой в директивами `ng-view` и `ui-view`, ну и делает пользователя более энергичным и быстрым, ориентируясь в коде.
 
-    Note: If you need to conditionally cancel the route before you start use the controller, use a [route resolve](#style-y081) instead.
+    Замечание: Если вам нужно при каком-то условии отменить маршрут перед началом использования контроллера, используйте для этого [route resolve](#style-y081).
     
   ```javascript
-  /* avoid */
+  /* избегайте этого */
   function Avengers(dataservice) {
       var vm = this;
       vm.avengers = [];
@@ -1269,7 +1269,7 @@
   ```
 
   ```javascript
-  /* recommended */
+  /* рекомендовано */
   function Avengers(dataservice) {
       var vm = this;
       vm.avengers = [];
@@ -1288,30 +1288,30 @@
   }
   ```
 
-### Route Resolve Promises
+### Работа с Объектами Promise в Маршрутах
 ###### [Style [Y081](#style-y081)]
 
-  - When a controller depends on a promise to be resolved before the controller is activated, resolve those dependencies in the `$routeProvider` before the controller logic is executed. If you need to conditionally cancel a route before the controller is activated, use a route resolver.
+  - Если контроллер зависит от объекта promise, от результата которого зависит активация контроллера, то разрешайте/получайте эти зависимости в `$routeProvider`, перед тем как логика контроллера будет выполена. Если вам нужно по какому-то условию отменить маршрут перед активацией контроллера, то используйте обработчик маршрутов.    
 
-  - Use a route resolve when you want to decide to cancel the route before ever transitioning to the View.
+  - Используйте обработчик маршрутов, если вы решили в последствии отменить маршут до перехода к представлению.
 
-    *Why?*: A controller may require data before it loads. That data may come from a promise via a custom factory or [$http](https://docs.angularjs.org/api/ng/service/$http). Using a [route resolve](https://docs.angularjs.org/api/ngRoute/provider/$routeProvider) allows the promise to resolve before the controller logic executes, so it might take action based on that data from the promise.
+    *Почему?*: Контроллер может потребовать данные перед своей загрузкой.  Эти данные могут прийти из promise объекта через пользовательскую фабрику или [$http](https://docs.angularjs.org/api/ng/service/$http). Использование [route resolve](https://docs.angularjs.org/api/ngRoute/provider/$routeProvider) дает возможность объекту promise разрешиться перед тем как логика контроллера выполнится, тогда мы сможем выполнить действие, зависящее от результата объекта promise.
 
-    *Why?*: The code executes after the route and in the controller’s activate function. The View starts to load right away. Data binding kicks in when the activate promise resolves. A “busy” animation can be shown during the view transition (via ng-view or ui-view)
+    *Почему?*: Код выполняется после маршрута и в активационной функции контроллера. После этого сразу же начинает загружаться представление. Связывание данных начинается, когда активационнный объект promisе разрешился/выполнился. Анимация "прогресса" может быть показана время передачи представления (via ng-view or ui-view).
 
-    Note: The code executes before the route via a promise. Rejecting the promise cancels the route. Resolve makes the new view wait for the route to resolve. A “busy” animation can be shown before the resolve and through the view transition. If you want to get to the View faster and do not require a checkpoint to decide if you can get to the View, consider the [controller `activate` technique](#style-y080) instead.
+    Замечание: Код запускается перед маршрутом через объект promise. Отклонение promise отменяет маршрут. Разрешение заставляет ожидать новое представление, когда маршрут разрешится. Анимация “прогресса” может быть показана перед разрешением и через передачу представления. Если вам нужно получить представление быстрее и вам не нужна точка решения получать ли представление, используйте тогда [controller `activate` technique](#style-y080).
 
   ```javascript
-  /* avoid */
+  /* избегайте этого */
   angular
       .module('app')
       .controller('Avengers', Avengers);
 
   function Avengers(movieService) {
       var vm = this;
-      // unresolved
+      // не определено
       vm.movies;
-      // resolved asynchronously
+      // определено асинхронно
       movieService.getMovies().then(function(response) {
           vm.movies = response.movies;
       });
@@ -1319,7 +1319,7 @@
   ```
 
   ```javascript
-  /* better */
+  /* это лучше */
 
   // route-config.js
   angular
@@ -1352,10 +1352,10 @@
   }
   ```
 
-    Note: The example below shows the route resolve points to a named function, which is easier to debug and easier to handle dependency injection.
+    Замечание: В примере ниже показано, как разрешение маршрута указывает на именованную функцию, которую легче отлаживать и легче оперировать встроенной зависимостью. 
 
   ```javascript
-  /* even better */
+  /* еще лучше */
 
   // route-config.js
   angular
@@ -1389,7 +1389,7 @@
         vm.movies = moviesPrepService.movies;
   }
   ```
-    Note: The code example's dependency on `movieService` is not minification safe on its own. For details on how to make this code minification safe, see the sections on [dependency injection](#manual-annotating-for-dependency-injection) and on [minification and annotation](#minification-and-annotation).
+    Замечание: Пример кода зависимости от `movieService` не безопасен для минификации. Подробности от том как сделать этот код бесопасным для минификации, смотрите секции [dependency injection](#manual-annotating-for-dependency-injection) и [minification and annotation](#minification-and-annotation).
 
 **[Back to top](#table-of-contents)**
 
