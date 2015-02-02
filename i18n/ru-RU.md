@@ -1419,19 +1419,19 @@
     angular.module('app').controller('Dashboard', d);function d(a, b) { }
     ```
 
-### Manually Identify Dependencies
+### Определяйте Зависимости Вручную
 ###### [Style [Y091](#style-y091)]
 
-  - Use `$inject` to manually identify your dependencies for AngularJS components.
+  - Используйте `$inject` для ручного определения ваших зависимостей для AngulaJS.
   
-    *Why?*: This technique mirrors the technique used by [`ng-annotate`](https://github.com/olov/ng-annotate), which I recommend for automating the creation of minification safe dependencies. If `ng-annotate` detects injection has already been made, it will not duplicate it.
+    *Почему?*: Этот техника отражает технику использованную в [`ng-annotate`](https://github.com/olov/ng-annotate), которую я рекомендую для автоматического создания зависимостей, безопасных для минификации. Если `ng-annotate` обнаруживает вставку(injection), которая уже была, то она не будет продублирована.
 
-    *Why?*: This safeguards your dependencies from being vulnerable to minification issues when parameters may be mangled. For example, `common` and `dataservice` may become `a` or `b` and not be found by AngularJS.
+    *Почему?*: Это гарантирует вашим зависимостям защиту от повреждений, которую может нанести минификация, путем урезания и укорачивания переменных. Например, `common` и `dataservice` превратятся `a` и `b`, и не будут найдены средой AngularJS.
 
-    *Why?*: Avoid creating in-line dependencies as long lists can be difficult to read in the array. Also it can be confusing that the array is a series of strings while the last item is the component's function. 
+    *Почему?*: Избегайте создания однострочных зависимостей в виде длинных списков, которые трудно читаемы в массиве. Еще в вводят в конфуз, то что такие массивы сосотоят из серии строк, в то время как последний элемент - это компонент-функция.
 
     ```javascript
-    /* avoid */
+    /* избегайте этого */
     angular
         .module('app')
         .controller('Dashboard', 
@@ -1441,7 +1441,7 @@
     ```
 
     ```javascript
-    /* avoid */
+    /* избегайте этого */
     angular
       .module('app')
       .controller('Dashboard', 
@@ -1452,7 +1452,7 @@
     ```
 
     ```javascript
-    /* recommended */
+    /* рекомендовано */
     angular
         .module('app')
         .controller('Dashboard', Dashboard);
@@ -1463,27 +1463,27 @@
     }
     ```
 
-    Note: When your function is below a return statement the $inject may be unreachable (this may happen in a directive). You can solve this by either moving the $inject above the return statement or by using the alternate array injection syntax. 
+    Замечание: Если функция снизу является возращаемым значением, то $inject может быть недостижымым (это может случится в директиве). Это можно решить перемещением $inject выше, чем возращаемое значение, либо использовать альтернативный синтаксис массива вставок.
 
-    Note: [`ng-annotate 0.10.0`](https://github.com/olov/ng-annotate) introduced a feature where it moves the `$inject` to where it is reachable.
+    Замечание: [`ng-annotate 0.10.0`](https://github.com/olov/ng-annotate) ввело возможность, когда `$inject` переносится туда, где оно доступно.
 
     ```javascript
-    // inside a directive definition
+    // внутри определения директивы
     function outer() {
         return {
             controller: DashboardPanel,
         };
 
-        DashboardPanel.$inject = ['logger']; // Unreachable
+        DashboardPanel.$inject = ['logger']; // Недоступный код
         function DashboardPanel(logger) {
         }
     }
     ```
 
     ```javascript
-    // inside a directive definition
+    // внутри определения директивы
     function outer() {
-        DashboardPanel.$inject = ['logger']; // reachable
+        DashboardPanel.$inject = ['logger']; // Доступный код
         return {
             controller: DashboardPanel,
         };
