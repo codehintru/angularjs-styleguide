@@ -1395,15 +1395,15 @@
 
 ## Manual Annotating for Dependency Injection
 
-### UnSafe from Minification
+### Уязвимости от Минификации
 ###### [Style [Y090](#style-y090)]
 
-  - Avoid using the shortcut syntax of declaring dependencies without using a minification-safe approach.
+  - Избегайте объявления зависимостей без использования безопасного для минификации подхода. 
   
-    *Why?*: The parameters to the component (e.g. controller, factory, etc) will be converted to mangled variables. For example, `common` and `dataservice` may become `a` or `b` and not be found by AngularJS.
+    *Почему?*: Параметры для компонент (типа контроллер, фабрика и т.п.) будут преобразованы в усеченные переменные. Например, `common` и `dataservice` превратятся `a` или `b` и не будут найдены средой AngularJS.
 
     ```javascript
-    /* avoid - not minification-safe*/
+    /* избегайте этого - не безопасно для минификации */
     angular
         .module('app')
         .controller('Dashboard', Dashboard);
@@ -1412,10 +1412,10 @@
     }
     ```
 
-    This code may produce mangled variables when minified and thus cause runtime errors.
+    Этот после минификации будет производить усеченные переменные и это будет вызывать ошибки выполнения. 
 
     ```javascript
-    /* avoid - not minification-safe*/
+    /* избегайте этого- не безопасно для минификации */
     angular.module('app').controller('Dashboard', d);function d(a, b) { }
     ```
 
