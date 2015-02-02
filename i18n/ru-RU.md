@@ -1493,17 +1493,17 @@
     }
     ```
 
-### Manually Identify Route Resolver Dependencies
+### Определяйте Маршрутных Обработчиков Зависимостей Вручную
 ###### [Style [Y092](#style-y092)]
 
-  - Use $inject to manually identify your route resolver dependencies for AngularJS components.
+  - Используйте $inject чтобы вручную определить ваш маршрутный обработчик зависимостей для компонентов AngularJS.
 
-    *Why?*: This technique breaks out the anonymous function for the route resolver, making it easier to read.
+    *Почему?*: Эта техника убирает аннимные функции для маршрутных обработчиков, делая чтение такого код проще.
 
-    *Why?*: An `$inject` statement can easily precede the resolver to handle making any dependencies minification safe.
+    *Почему?*: Оператор $inject` может предшествовать обработчику для того, чтобы сдалать любую любую минификацию зависимостей безопасной.
 
     ```javascript
-    /* recommended */
+    /* рекомендовано */
     function config($routeProvider) {
         $routeProvider
             .when('/avengers', {
