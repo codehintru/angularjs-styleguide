@@ -1178,15 +1178,15 @@
 ### Директивы и ControllerAs
 ###### [Style [Y075](#style-y075)]
 
-  - Use `controller as` syntax with a directive to be consistent with using `controller as` with view and controller pairings.
+  - Используйте синтактис`controller as` в директиве, чтобы директива была согласована с использованием синтаксиса `controller as` в паре контроллера и представлении.
 
-    *Why?*: It makes sense and it's not difficult.
+    *Почему?*: Это имет смысл и не так сложно.
 
-    Note: The directive below demonstrates some of the ways you can use scope inside of link and directive controllers, using controllerAs. I in-lined the template just to keep it all in one place. 
+    Замечание: Директива ниже демонстрирует некоторые способы, при которых вы можете использовать объект $scope внутри ссылки и контроллере директивы. Я сделал шаблон инлайновый для того, чтобы держать все в одном месте.
 
-    Note: Regarding dependency injection, see [Manually Identify Dependencies](#manual-annotating-for-dependency-injection).
+    Замечание: Что касается внедренной зависимости, смотрите [Определение зависимостей вручную](#manual-annotating-for-dependency-injection).
 
-    Note: Note that the directive's controller is outside the directive's closure. This style eliminates issues where the injection gets created as unreachable code after a `return`.
+    Замечание: Заметьте, что контроллер директивы находится снаружи самой директивы. Такой подход исключает проблемы, когда инжектор создается в недосягаемом код после, например, 'return'.
 
   ```html
   <div my-example max="77"></div>
@@ -1221,7 +1221,7 @@
   ExampleController.$inject = ['$scope'];
 
   function ExampleController($scope) {
-      // Injecting $scope just for comparison
+      // Внедрение $scope сразу в сравнение
       var vm = this;
 
       vm.min = 3; 
