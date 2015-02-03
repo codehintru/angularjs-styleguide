@@ -1524,21 +1524,21 @@
 
 **[Back to top](#table-of-contents)**
 
-## Minification and Annotation
+## Минификация и аннотация
 
 ### ng-annotate
 ###### [Style [Y100](#style-y100)]
 
-  - Use [ng-annotate](//github.com/olov/ng-annotate) for [Gulp](http://gulpjs.com) or [Grunt](http://gruntjs.com) and comment functions that need automated dependency injection using `/** @ngInject */`
+  - Используйте [ng-annotate](//github.com/olov/ng-annotate) для [Gulp](http://gulpjs.com) или [Grunt](http://gruntjs.com) и комментируйте функции, которые нуждаются в автоматической вставке зависимостей, используйте `/** @ngInject */`.
   
-    *Why?*: This safeguards your code from any dependencies that may not be using minification-safe practices.
+    *Why?*: Это гарантирует, что в вашем коде нет зависимостей, которые не используют защиту для повреждений от минификации.
 
-    *Why?*: [`ng-min`](https://github.com/btford/ngmin) is deprecated 
+    *Why?*: [`ng-min`](https://github.com/btford/ngmin) не рекомендуется для применения, выводится из употребления 
 
-    >I prefer Gulp as I feel it is easier to write, to read, and to debug.
+    >Я предпочитаю Gulp, так как для меня он проще для чтения, написания кода и отладки.
 
-    The following code is not using minification safe dependencies.
-
+    Следующий код не использует защиту зависимостей от минификации.
+    
     ```javascript
     angular
         .module('app')
@@ -1557,7 +1557,7 @@
     }
     ```
 
-    When the above code is run through ng-annotate it will produce the following output with the `$inject` annotation and become minification-safe.
+    Если код выше запустить через ng-annotate, то будет произведен код с аннотацией `$inject`, и код станет устойчив к минификации.  
 
     ```javascript
     angular
@@ -1579,12 +1579,12 @@
     Avengers.$inject = ['storageService', 'avengerService'];
     ```
 
-    Note: If `ng-annotate` detects injection has already been made (e.g. `@ngInject` was detected), it will not duplicate the `$inject` code.
+    Замечание: Если `ng-annotate` обнаруживает вставки которые уже сделаны (например `@ngInject` был обнаружен), он не будет дублирован в коде `$inject`.
 
-    Note: When using a route resolver you can prefix the resolver's function with `/* @ngInject */` and it will produce properly annotated code, keeping any injected dependencies minification safe.
+    Замечание: Если используется маршрутный обработчик, то вы можете перед встраиваемой функцией подставить `/* @ngInject */` и это будет производить корректный аннотационный код, делающий каждую вставленную зависимость безопасной для минификации. 
 
     ```javascript
-    // Using @ngInject annotations
+    // Используем @ngInject аннотацию
     function config($routeProvider) {
         $routeProvider
             .when('/avengers', {
@@ -1600,7 +1600,7 @@
     }
     ```
 
-    > Note: Starting from AngularJS 1.3 use the [`ngApp`](https://docs.angularjs.org/api/ng/directive/ngApp) directive's `ngStrictDi` parameter. When present the injector will be created in "strict-di" mode causing the application to fail to invoke functions which do not use explicit function annotation (these may not be minification safe). Debugging info will be logged to the console to help track down the offending code.
+    > Замечание: Начиная с AngularJS 1.3 используйте [`ngApp`](https://docs.angularjs.org/api/ng/directive/ngApp) директивный параметр `ngStrictDi`. При наличии инжектора будет создан режим "strict-di", который не даст приложению работать, если обнаружит функции, которые не используют явные аннотации (например, для защиты от минификации). Отладочная информация будет отображаться в консоли, чтобы помочь разработчику выявить код, ломающий приложение.
     `<body ng-app="APP" ng-strict-di>`
 
 ### Use Gulp or Grunt for ng-annotate
