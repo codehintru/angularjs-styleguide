@@ -1709,22 +1709,22 @@
     }
     ```
 
-### Route Errors
+### Маршрутные ошибки
 ###### [Style [Y112](#style-y112)]
 
-  - Handle and log all routing errors using [`$routeChangeError`](https://docs.angularjs.org/api/ngRoute/service/$route#$routeChangeError).
+  - Обрабатывайте и логгируйте все маршрутные ошибки изпользуя [`$routeChangeError`](https://docs.angularjs.org/api/ngRoute/service/$route#$routeChangeError).
 
-    *Why?*: Provides a consistent way handle all routing errors.
+    *Почему?*: Это дает постоянный и устойчивый способ обработки всех маршрутных ошибок.
 
-    *Why?*: Potentially provides a better user experience if a routing error occurs and you route them to a friendly screen with more details or recovery options.
+    *Почему?*: Потенциально мы получим лучший пользовательский опыт обработки маршрутных ошибок и научимся перенаправлять их на более дружественный экран описания ошибки с большими подробностями и указаниями к восстановлению здоровой ситуации.
 
     ```javascript
-    /* recommended */
+    /* рекомендовано */
     function handleRoutingErrors() {
         /**
-         * Route cancellation:
-         * On routing error, go to the dashboard.
-         * Provide an exit clause if it tries to do it twice.
+         * Отмена маршрута:
+         * Во время маршрутной ошибки, мы переходим на информационную панель.
+         * Не забудьте реализовать выход, если происходит попытка перехода дважды.
          */
         $rootScope.$on('$routeChangeError',
             function(event, current, previous, rejection) {
@@ -1732,8 +1732,8 @@
                     'unknown target';
                 var msg = 'Error routing to ' + destination + '. ' + (rejection.msg || '');
                 /**
-                 * Optionally log using a custom service or $log.
-                 * (Don't forget to inject custom service)
+                 * Опционально мы можем записать логи, изпользуя пользовательский сервис или $log.
+                 * (Не забудьте инжектировать пользовательский сервис)
                  */
                 logger.warning(msg, [current]);
             }
