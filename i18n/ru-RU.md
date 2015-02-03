@@ -1603,14 +1603,14 @@
     > Замечание: Начиная с AngularJS 1.3 используйте [`ngApp`](https://docs.angularjs.org/api/ng/directive/ngApp) директивный параметр `ngStrictDi`. При наличии инжектора будет создан режим "strict-di", который не даст приложению работать, если обнаружит функции, которые не используют явные аннотации (например, для защиты от минификации). Отладочная информация будет отображаться в консоли, чтобы помочь разработчику выявить код, ломающий приложение.
     `<body ng-app="APP" ng-strict-di>`
 
-### Use Gulp or Grunt for ng-annotate
+### Используйте Gulp или Grunt для ng-annotate
 ###### [Style [Y101](#style-y101)]
 
-  - Use [gulp-ng-annotate](https://www.npmjs.org/package/gulp-ng-annotate) or [grunt-ng-annotate](https://www.npmjs.org/package/grunt-ng-annotate) in an automated build task. Inject `/* @ngInject */` prior to any function that has dependencies.
+  - Используйте [gulp-ng-annotate](https://www.npmjs.org/package/gulp-ng-annotate) или [grunt-ng-annotate](https://www.npmjs.org/package/grunt-ng-annotate) для автоматических билдов. Вставляйте `/* @ngInject */` перед любой функцией, которая имеет зависимости.
   
-    *Why?*: ng-annotate will catch most dependencies, but it sometimes requires hints using the `/* @ngInject */` syntax.
+    *Почему?*: ng-annotate будет отлавливать большинство зависимостей, но иногда требуются вставлять подсказки в виде синтаксиса `/* @ngInject */`.
 
-    The following code is an example of a gulp task using ngAnnotate
+    Следующий код является примером gulp задания с использованием ngAnnotate.
 
     ```javascript
     gulp.task('js', ['jshint'], function() {
