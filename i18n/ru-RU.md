@@ -1678,17 +1678,17 @@
     }
     ```
 
-### Exception Catchers
+### Обработчики Исключений
 ###### [Style [Y111](#style-y111)]
 
-  - Create a factory that exposes an interface to catch and gracefully handle exceptions.
+  - Создайте фабрику, которая предоставляет интерфейс для перехвата и изящной обработки исключений. 
 
-    *Why?*: Provides a consistent way to catch exceptions that may be thrown in your code (e.g. during XHR calls or promise failures).
+    *Почему?*: Это дает постоянный и надежный способ для перехвата исключений, которые могут возникнуть в вашем коде (например, во время вызовов объекта XHR или сбоев в работе объектов promise).
 
-    Note: The exception catcher is good for catching and reacting to specific exceptions from calls that you know may throw one. For example, when making an XHR call to retrieve data from a remote web service and you want to catch any exceptions from that service and react uniquely.
+    Замечание: Перехватчик исключений хорош для отлавливания и реагирования специфических исключений для вызовов, про которые вы точно знаете, что они могут бросить только одно исключение. Например, вы делаете вызов XHR для получения данных с удаленного сервера и хотите поймать все исключения этого сервиса и обработать их индивидуально.
 
     ```javascript
-    /* recommended */
+    /* рекомендовано */
     angular
         .module('blocks.exception')
         .factory('exception', exception);
