@@ -1635,19 +1635,19 @@
 
 **[Back to top](#table-of-contents)**
 
-## Exception Handling
+## Обработка Исключений
 
-### decorators
+### декораторы
 ###### [Style [Y110](#style-y110)]
 
-  - Use a [decorator](https://docs.angularjs.org/api/auto/service/$provide#decorator), at config time using the [`$provide`](https://docs.angularjs.org/api/auto/service/$provide) service, on the [`$exceptionHandler`](https://docs.angularjs.org/api/ng/service/$exceptionHandler) service to perform custom actions when exceptions occur.
+  - Используйте [decorator](https://docs.angularjs.org/api/auto/service/$provide#decorator), во время конфигурации, применяя сервис [`$provide`](https://docs.angularjs.org/api/auto/service/$provide), пользовательские действия будут происходить в сервисе [`$exceptionHandler`](https://docs.angularjs.org/api/ng/service/$exceptionHandler), если произойдут исключения. 
   
-    *Why?*: Provides a consistent way to handle uncaught AngularJS exceptions for development-time or run-time.
+    *Почему?*: Это дает постоянный надежный способ обработки необработанных исключений AngularJS во время разработки и во время выполнения.
 
-    Note: Another option is to override the service instead of using a decorator. This is a fine option, but if you want to keep the default behavior and extend it a decorator is recommended.
+    Замечание: Другим способом является переопределение сервиса вместо использования декоратора. Это прекрасный способ, но если вы хотите сохранить поведение по умолчанию, и просто дополнить это поведение, то декоратоор крайне рекомендуем.
 
     ```javascript
-    /* recommended */
+    /* рекомендовано */
     angular
         .module('blocks.exception')
         .config(exceptionConfig);
@@ -1668,9 +1668,9 @@
                 cause: cause 
             };
             /**
-             * Could add the error to a service's collection,
-             * add errors to $rootScope, log errors to remote web server,
-             * or log locally. Or throw hard. It is entirely up to you.
+             * Здесь можно добавить ошибку в сервисную коллекцию,
+             * добавить ошибки в $rootScope, логировать ошибки на удаленный сервер
+             * или записывать их локально. Или просто бросить ошибку дальше. Это полностью зависит от вас.
              * throw exception;
              */
             toastr.error(exception.msg, errorData);
