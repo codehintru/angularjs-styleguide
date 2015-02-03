@@ -1743,19 +1743,18 @@
 
 **[Back to top](#table-of-contents)**
 
-## Naming
+## Именования
 
-### Naming Guidelines
+### Рекомендации для именований
 ###### [Style [Y120](#style-y120)]
 
-  - Use consistent names for all components following a pattern that describes the component's feature then (optionally) its type. My recommended pattern is `feature.type.js`. There are 2 names for most assets:
-    * the file name (`avengers.controller.js`)
-    * the registered component name with Angular (`AvengersController`)
+  - Используйте постоянные принципы именований для всех компонентов по шаблону, который описывает особенность(feature) компонента, а затем (опционально) его тип. Я рекомендую шаблон - `feature.type.js`. Существует два типа имен для большинства случаев:
+    * имя файла (`avengers.controller.js`)
+    * имя компонента, которое зарегистрировано Angular (`AvengersController`)
  
-    *Why?*: Naming conventions help provide a consistent way to find content at a glance. Consistency within the project is vital. Consistency with a team is important. Consistency across a company provides tremendous efficiency.
+    *Почему?*: Соглашения об именованиях дает постояннный надежный способ поиска содержимого быстрым беглым взглядом. Согласованность в проекте жизненно важна. Согласованность в команде очень важна. Согласованность между компаниями дает огромную эффективность. 
 
-    *Why?*: The naming conventions should simply help you find your code faster and make it easier to understand. 
-
+    *Почему?*: Соглашения об именованиях просто должны помочь найти вам свой код быстрее, и сделать его проще для понимания. 
 ### Feature File Names
 ###### [Style [Y121](#style-y121)]
 
