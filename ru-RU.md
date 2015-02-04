@@ -1957,10 +1957,10 @@
 
     *Why?*: Мы получаем идентифицируемое место для установки конфигурации для модуля.
 
-### Routes
+### Маршруты
 ###### [Style [Y129](#style-y129)]
 
-  - Separate route configuration into its own file. Examples might be `app.route.js` for the main module and `admin.route.js` for the `admin` module. Even in smaller apps I prefer this separation from the rest of the configuration. 
+  - Выделяйте конфигурацию маршрута в свой собственный файл. Примеры могут быть такими: `app.route.js` для главного модуля и `admin.route.js` для модуля `admin`. Даже в маленьких приложениях я предпочитаю такое разделение от остальной конфигурации. 
 
 **[Back to top](#table-of-contents)**
 
