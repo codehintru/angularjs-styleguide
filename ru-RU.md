@@ -1825,15 +1825,15 @@
 ### Имена Тестовых Файлов
 ###### [Style [Y122](#style-y122)]
 
-  - Name test specifications similar to the component they test with a suffix of `spec`.
+  - Имя тестовой спецификации подобно имени компонента, которая его тестит, только к ней еще добавляется суффикс `spec`. 
 
-    *Why?*: Provides a consistent way to quickly identify components.
+    *Почему?*: Это надежный способ для быстрой идентификации компонентов.
 
-    *Why?*: Provides pattern matching for [karma](http://karma-runner.github.io/) or other test runners.
+    *Why?*: Это шаблон соответствующий [karma](http://karma-runner.github.io/) или другим движкам для запуска тестов.
 
     ```javascript
     /**
-     * recommended
+     * рекомендовано
      */
     avengers.controller.spec.js
     logger.service.spec.js
@@ -1841,18 +1841,18 @@
     avenger-profile.directive.spec.js
     ```
 
-### Controller Names
+### Имена Контроллеров
 ###### [Style [Y123](#style-y123)]
 
-  - Use consistent names for all controllers named after their feature. Use UpperCamelCase for controllers, as they are constructors.
+  - Используйте согласованные имена для всех контроллеров, именованных по их характерной особенности. Используйте  UpperCamelCase (ВерхнийВерблюжийРегистр) для контроллеров, так как они являются конструкторами. 
 
-    *Why?*: Provides a consistent way to quickly identify and reference controllers.
+    *Почему?*: Это дает возможность быстро идентифицировать и находить ссылки на контроллеры.
 
-    *Why?*: UpperCamelCase is conventional for identifying object that can be instantiated using a constructor.
+    *Почему?*: UpperCamelCase является традиционным форматом для идентификации объектов, которые могут быть созданы с помощью конструктора.
 
     ```javascript
     /**
-     * recommended
+     * рекомендовано
      */
 
     // avengers.controller.js
