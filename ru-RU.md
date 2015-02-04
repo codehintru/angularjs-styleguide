@@ -1979,12 +1979,12 @@
     3. `F`Держать структуру ровной как можно дольше (`F`lat structure as long as we can)
     4. `T`Старайтесь оставаться DRY или T-DRY (Don’t Repeat Yourself)  - Не Повторяйте Себя (`T`ry to stay DRY - Don’t Repeat Yourself)
 
-### Locate
+### Размещение
 ###### [Style [Y141](#style-y141)]
 
-  - Make locating your code intuitive, simple and fast.
+  - Размещайте свой код интуитивно, просто и быстро.
 
-    *Why?*: I find this to be super important for a project. If the team cannot find the files they need to work on quickly, they will not be able to work as efficiently as possible, and the structure needs to change. You may not know the file name or where its related files are, so putting them in the most intuitive locations and near each other saves a ton of time. A descriptive folder structure can help with this.
+    *Почему?*: Я считаю, это должно быть супер важно для проекта. Если команда не может быстро найти файлы, с которыми нужно работать, то команда не сможет работать настолько эффективно, насколько это возможно. Такая структура должна быть изменена. Вы можете не знать имени файла или где находятся его сопутствующие файлы, тогда поместите их в наиболее интуитивно подходящее место, рядом друг другом, и это сэкономит кучу времени. Описательная структура папок может помочь с этим.
 
     ```
     /bower_components
