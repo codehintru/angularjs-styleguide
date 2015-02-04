@@ -1940,23 +1940,22 @@
     function xxAvengerProfile() { }
     ```
 
-### Modules
+### Модули
 ###### [Style [Y127](#style-y127)]
 
-  - When there are multiple modules, the main module file is named `app.module.js` while other dependent modules are named after what they represent. For example, an admin module is named `admin.module.js`. The respective registered module names would be `app` and `admin`. 
+  - Если разрабатываются несколько модулей, файл главного модуля будет называться `app.module.js`, а другие модули получат свое название по своему назначению (то что они представляют). Например, модуль администрирования будет назван `admin.module.js`. Соответствующие зарегистрированные имена модулей будут `app` и `admin`. 
 
-    *Why?*: Provides consistency for multiple module apps, and for expanding to large applications.
+    *Почему?*: Это дает согласованность для многих модулей приложения, а также позволяет расширяться в огромные приложения.  
+    *Почему?*: Получаем простой способ автоматизировать работу по первоначальной загрузке всех модульных определений, а затем уже остальных файлов angular (для )  Provides easy way to use task automation to load all module definitions first, then all other angular files (для упаковки и комплектации файлов - bundling).
 
-    *Why?*: Provides easy way to use task automation to load all module definitions first, then all other angular files (for bundling).
-
-### Configuration
+### Конфигурация
 ###### [Style [Y128](#style-y128)]
 
-  - Separate configuration for a module into its own file named after the module. A configuration file for the main `app` module is named `app.config.js` (or simply `config.js`). A configuration for a module named `admin.module.js` is named `admin.config.js`.
+  - Отделяйте конфигурационную информацию от модуля в отдельном файле, называйте такой файл по названию модульного файла. Конфигурационный файл для главного `app` модуля называем `app.config.js` (или просто `config.js`). Конфигурацию для модуля `admin.module.js` называем соответственно `admin.config.js`.
 
-    *Why?*: Separates configuration from module definition, components, and active code.
+    *Почему?*: Конфигурация отделяется от определения модуля, компонентов и активного кода.
 
-    *Why?*: Provides a identifiable place to set configuration for a module.
+    *Why?*: Мы получаем идентифицируемое место для установки конфигурации для модуля.
 
 ### Routes
 ###### [Style [Y129](#style-y129)]
