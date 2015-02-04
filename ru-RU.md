@@ -1681,7 +1681,7 @@
 ### Обработчики Исключений
 ###### [Style [Y111](#style-y111)]
 
-  - Создайте фабрику, которая предоставляет интерфейс для перехвата и изящной обработки исключений. 
+  - Создайте фабрику, которая предоставит интерфейс для перехвата и изящной обработки исключений. 
 
     *Почему?*: Это дает постоянный и надежный способ для перехвата исключений, которые могут возникнуть в вашем коде (например, во время вызовов объекта XHR или сбоев в работе объектов promise).
 
@@ -1846,7 +1846,7 @@
 
   - Используйте согласованные имена для всех контроллеров, именованных по их характерной особенности. Используйте  UpperCamelCase (ВерхнийВерблюжийРегистр) для контроллеров, так как они являются конструкторами. 
 
-    *Почему?*: Это дает возможность быстро идентифицировать и находить ссылки на контроллеры.
+    *Почему?*: Это дает надежный и понятный способ для быстрой идентификации и применения контроллеров.
 
     *Почему?*: UpperCamelCase является традиционным форматом для идентификации объектов, которые могут быть созданы с помощью конструктора.
 
@@ -1863,18 +1863,18 @@
     function HeroAvengers() { }
     ```
 
-### Controller Name Suffix
+### Суффикс Имени Контроллера
 ###### [Style [Y124](#style-y124)]
 
-  - Append the controller name with the suffix `Controller` or with no suffix. Choose 1, not both.
+  - Добавляйте к имени контроллера суффикс `Controller` или не добавляйте. Выберите что-то одно, но не два.
 
-    *Why?*: The `Controller` suffix is more commonly used and is more explicitly descriptive.
+    *Почему?*: Суффикс `Controller` более общеупотребим и наиболее явно описателен.
 
-    *Why?*: Omitting the suffix is more succinct and the controller is often easily identifiable even without the suffix.
+    *Почему?*: Если не указывать суффикс, то получатся более краткие имена, но контроллеры все равно будут легко идентифицируемы, даже без суффикса. 
 
     ```javascript
     /**
-     * recommended: Option 1
+     * рекомендовано: Вариант 1
      */
 
     // avengers.controller.js
@@ -1887,7 +1887,7 @@
 
     ```javascript
     /**
-     * recommended: Option 2
+     * рекомендовано: Вариант 2
      */
 
     // avengers.controller.js
@@ -1898,16 +1898,16 @@
     function AvengersController() { }
     ```
 
-### Factory Names
+### Имена Фабрик
 ###### [Style [Y125](#style-y125)]
 
-  - Use consistent names for all factories named after their feature. Use camel-casing for services and factories.
+  - Используйте согласованные имена для всех фабрик, именуйте их по характерной особенности. Используйте camel-casing для сервисов и фабрик.
 
-    *Why?*: Provides a consistent way to quickly identify and reference factories.
+    *Почему?*: Это дает надежный и понятный способ для быстрой идентификации и применения фабрик.
 
     ```javascript
     /**
-     * recommended
+     * рекомендовано
      */
 
     // logger.service.js
@@ -1918,16 +1918,16 @@
     function logger() { }
     ```
 
-### Directive Component Names
+### Имена Директивных Компонент
 ###### [Style [Y126](#style-y126)]
 
-  - Use consistent names for all directives using camel-case. Use a short prefix to describe the area that the directives belong (some example are company prefix or project prefix).
+  - Используйте согласованные имена для всех директив, применяя camel-case. Добавляйте короткий префикс для описания области, которой эти директивы принадлежат (иногда это может быть префикс компании, иногда префикс проекта).
 
-    *Why?*: Provides a consistent way to quickly identify and reference components.
+    *Почему?*: Это дает надежный и понятный способ для быстрой идентификации и применения компонент.
 
     ```javascript
     /**
-     * recommended
+     * рекомендовано
      */
 
     // avenger-profile.directive.js
@@ -1935,7 +1935,7 @@
         .module
         .directive('xxAvengerProfile', xxAvengerProfile);
 
-    // usage is <xx-avenger-profile> </xx-avenger-profile>
+    // применять так <xx-avenger-profile> </xx-avenger-profile>
 
     function xxAvengerProfile() { }
     ```
