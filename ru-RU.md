@@ -1748,33 +1748,33 @@
 ### Рекомендации для именований
 ###### [Style [Y120](#style-y120)]
 
-  - Используйте постоянные принципы именований для всех компонентов по шаблону, который описывает особенность(feature) компонента, а затем (опционально) его тип. Я рекомендую шаблон - `feature.type.js`. Существует два типа имен для большинства случаев:
+  - Используйте согласованные имена для всех компонентов по шаблону, который описывает особенность(feature) компонента, а затем (опционально) его тип. Я рекомендую шаблон - `feature.type.js`. Существует два типа имен для большинства случаев:
     * имя файла (`avengers.controller.js`)
     * имя компонента, которое зарегистрировано Angular (`AvengersController`)
  
     *Почему?*: Соглашения об именованиях дает постояннный надежный способ поиска содержимого быстрым беглым взглядом. Согласованность в проекте жизненно важна. Согласованность в команде очень важна. Согласованность между компаниями дает огромную эффективность. 
 
     *Почему?*: Соглашения об именованиях просто должны помочь найти вам свой код быстрее, и сделать его проще для понимания. 
-### Feature File Names
+### Характерные Имена Файлов
 ###### [Style [Y121](#style-y121)]
 
-  - Use consistent names for all components following a pattern that describes the component's feature then (optionally) its type. My recommended pattern is `feature.type.js`.
+  - Используйте согласованные имена для всех компонентов используя шаблон, который описывает компонентную особенность, затем опционально его тип. Я рекомендую шаблон - `feature.type.js`.  
 
-    *Why?*: Provides a consistent way to quickly identify components.
+    *Почему?*: Это надежный способ для быстрой идентификации компонентов.
 
-    *Why?*: Provides pattern matching for any automated tasks.
+    *Почему?*: Автоматизирует рабочий процесс.
 
     ```javascript
     /**
-     * common options 
+     * общие настройки
      */
 
-    // Controllers
+    // Контроллеры
     avengers.js
     avengers.controller.js
     avengersController.js
 
-    // Services/Factories
+    // Сервисы/Фабрики
     logger.js
     logger.service.js
     loggerService.js
@@ -1782,47 +1782,47 @@
 
     ```javascript
     /**
-     * recommended
+     * рекомендовано
      */
 
-    // controllers
+    // контроллеры
     avengers.controller.js
     avengers.controller.spec.js
 
-    // services/factories
+    // сервисы/фабрики
     logger.service.js
     logger.service.spec.js
 
-    // constants
+    // константы
     constants.js
     
-    // module definition
+    // определение модуля
     avengers.module.js
 
-    // routes
+    // маршруты
     avengers.routes.js
     avengers.routes.spec.js
 
-    // configuration
+    // конфигурация
     avengers.config.js
     
-    // directives
+    // директивы
     avenger-profile.directive.js
     avenger-profile.directive.spec.js
     ```
 
-  Note: Another common convention is naming controller files without the word `controller` in the file name such as `avengers.js` instead of `avengers.controller.js`. All other conventions still hold using a suffix of the type. Controllers are the most common type of component so this just saves typing and is still easily identifiable. I recommend you choose 1 convention and be consistent for your team.
-
+  Замечание: Другим общим соглашением является именование файлов контроллера без слова `controller`, например называем файл `avengers.js` вместо `avengers.controller.js`. Все остальные соглашения все же должны содержать суффикс типа. Просто контроллеры наиболее общий тип компонетов, и таким образом мы экономим на время на печатании имени, но контроллеры все равно прекрасно идентифицируются. Я рекомендую выбрать один тип соглашения и быть на одной волне со своей командой.
+  
     ```javascript
     /**
-     * recommended
+     * рекомендовано
      */
     // Controllers
     avengers.js
     avengers.spec.js
     ```
 
-### Test File Names
+### Имена Тестовых Файлов
 ###### [Style [Y122](#style-y122)]
 
   - Name test specifications similar to the component they test with a suffix of `spec`.
