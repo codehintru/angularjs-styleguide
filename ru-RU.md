@@ -1964,20 +1964,20 @@
 
 **[Back to top](#table-of-contents)**
 
-## Application Structure LIFT Principle
+## Структура Приложения по Приниципу LIFT
 ### LIFT
 ###### [Style [Y140](#style-y140)]
 
-  - Structure your app such that you can `L`ocate your code quickly, `I`dentify the code at a glance, keep the `F`lattest structure you can, and `T`ry to stay DRY. The structure should follow these 4 basic guidelines. 
+  - Структура вашего приложения должна быть построена таким образом, чтобы вы могли: `L`размещать ваш код быстро - (`L`ocate your code quickly), `I`идентифицировать код практически с первого взгляда - (`I`dentify the code at a glance), `F`держать структуру ровной насколько это возможно - (keep the `F`lattest structure you can), и стараться оставаться DRY (Don’t Repeat Yourself) - Не Повторяйте Себя - (`T`ry to stay DRY - Don’t Repeat Yourself). Структура должна придерживаться этим основным 4 правилам.
 
-    *Why LIFT?*: Provides a consistent structure that scales well, is modular, and makes it easier to increase developer efficiency by finding code quickly. Another way to check your app structure is to ask yourself: How quickly can you open and work in all of the related files for a feature?
-
-    When I find my structure is not feeling comfortable, I go back and revisit these LIFT guidelines
+    *Почему LIFT?*: Получаем согласованную структуру, которая хорошо масштабируется, разбита на модули, и легко позволяет увеличить эффективность разработчика, путем быстрого нахождения кода. Другой способ проверить структуру вашего приложения - это спросить себя: Как быстро я могу открыть все сооответсвующие файлы, чтобы работать над нужной функциональностью? 
+    
+    Когда я чувствую, что работать с моей структурой некомфортно, я возвращаюсь к принципам LIFT.
   
-    1. `L`ocating our code is easy
-    2. `I`dentify code at a glance
-    3. `F`lat structure as long as we can
-    4. `T`ry to stay DRY (Don’t Repeat Yourself) or T-DRY
+    1. `L`Размещать наш код легко  (`L`ocating our code is easy)
+    2. `I`Идентифицировать код быстро (`I`dentify code at a glance)
+    3. `F`Держать структуру ровной как можно дольше (`F`lat structure as long as we can)
+    4. `T`Старайтесь оставаться DRY или T-DRY (Don’t Repeat Yourself)  - Не Повторяйте Себя (`T`ry to stay DRY - Don’t Repeat Yourself)
 
 ### Locate
 ###### [Style [Y141](#style-y141)]
