@@ -2038,12 +2038,12 @@
 
     Замечание: Найти более подробную информацию и объяснение структуры: [тут оригинальная статья о структуре приложения](http://www.johnpapa.net/angular-app-structuring-guidelines/).
 
-### Layout
+### Общие элементы
 ###### [Style [Y151](#style-y151)]
 
-  - Place components that define the overall layout of the application in a folder named `layout`. These may include a shell view and controller may act as the container for the app, navigation, menus, content areas, and other regions. 
+  - Размещайте компоненты, которые определяют общую компоновку приложения в папке `layout`. Там могут быть представление-оболочка и контроллер, которые являются контейнером для приложения, навигация, меню, регионы содержимого (content areas) и другие общие элементы. 
 
-    *Why?*: Organizes all layout in a single place re-used throughout the application.
+    *Почему?*: Так организуются все элементы общего назначения, которые размещаются в одном месте и используются во всем приложении.
 
 ### Folders-by-Feature Structure
 ###### [Style [Y152](#style-y152)]
