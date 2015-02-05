@@ -2141,30 +2141,30 @@
 
 **[Back to top](#table-of-contents)**
 
-## Modularity
+## Модульность
 
-### Many Small, Self Contained Modules
+### Много Маленьких Самодостаточных Модулей
 ###### [Style [Y160](#style-y160)]
 
-  - Create small modules that encapsulate one responsibility.
+  - Создавайте небольшие модули, которые включают в себя одну ответственность.
 
-    *Why?*: Modular applications make it easy to plug and go as they allow the development teams to build vertical slices of the applications and roll out incrementally. This means we can plug in new features as we develop them.
+    *Почему?*: Модульные приложения позволяют легко подключать и отключать модули, это дает командам разработчиков строить вертикальные срезы приложения и раскатывать их постепенно. Это значит мы можем добавлять новые модули в приложение по мере их готовности.
 
-### Create an App Module
+### Создайте Модуль Приложения
 ###### [Style [Y161](#style-y161)]
 
-  - Create an application root module whose role is pull together all of the modules and features of your application. Name this for your application.
+  - Создайте корневой модуль приложения, который будет собирать вместе все модули и функциональности вашего приложения. Назовите этот модуль именем вашего приложения.
 
-    *Why?*: AngularJS encourages modularity and separation patterns. Creating an application root module whose role is to tie your other modules together provides a very straightforward way to add or remove modules from your application.
+    *Почему?*: AngularJS специально разработан для поддержки модульности и принципов разделения сущностей. А создание корневого модуля приложения, который связывает все ваши остальные модули вместе, предоставляет очень простой способ добавления и удаления модулей из приложения.
 
-### Keep the App Module Thin
+### Держите Модуль Приложения Тонким
 ###### [Style [Y162](#style-y162)]
 
-  - Only put logic for pulling together the app in the application module. Leave features in their own modules.
+  - Поместите в модуль приложения только логику сборки приложения. Функциональности оставте в их собственных модулях.
 
-    *Why?*: Adding additional roles to the application root to get remote data, display views, or other logic not related to pulling the app together muddies the app module and make both sets of features harder to reuse or turn off.
+    *Почему?*: Добавление дополнительных ролей в корень приложения, типа получения или удаления данных, отображение представлений или другой подобной логики, не связанной со сборкой частей приложения вместе, загрязняет модуль приложения, а сами добавленные функциональности будет труднее повторно использовать или отключить.
 
-    *Why?*: The app module becomes a manifest that describes which modules help define the application. 
+    *Почему?*: Модуль приложения становится манифестом, который описывает какие модули участвуют в работе приложения.
 
 ### Feature Areas are Modules
 ###### [Style [Y163](#style-y163)]
