@@ -2184,24 +2184,24 @@
 
     *Почему?*: Эти типы функциональностей нужны во многих приложениях. Поэтому держите их отдельно в своих собственных модулях, применяйте универсально и повторно используйте во многих приложениях. 
 
-### Module Dependencies
+### Зависимости модулей
 ###### [Style [Y165](#style-y165)]
 
-  - The application root module depends on the app specific feature modules and any shared or reusable modules.
+  - Корневой модуль приложения зависит от специфичных функциональных модулей и от любых общих или повторно используемых модулей.
 
-    ![Modularity and Dependencies](https://raw.githubusercontent.com/johnpapa/angularjs-styleguide/master/assets/modularity-1.png)
+    ![Модульность и Зависимости](https://raw.githubusercontent.com/johnpapa/angularjs-styleguide/master/assets/modularity-1.png)
 
-    *Why?*: The main app module contains a quickly identifiable manifest of the application's features. 
+    *Почему?*: Главный модуль приложения содержит хорошо читаемый манифест функциональностей приложения.
 
-    *Why?*: Each feature area contains a manifest of what it depends on, so it can be pulled in as a dependency in other applications and still work. 
+    *Почему?*: Каждая функциональная область содержит манифест, поясняющий от чего она зависит, таким образом эта область может быть подключена к любому приложению вместе с ее зависимостями и все будет работать.
 
-    *Why?*: Intra-App features such as shared data services become easy to locate and share from within `app.core` (choose your favorite name for this module).
+    *Почему?*: Функциональности приложения для внутреннего пользования (intra-app) типа общие сервисы данных становится проще размещать и делится из модуля `app.core` (выберите это имя для такого модуля).
 
-    Note: This is a strategy for consistency. There are many good options here. Choose one that is consistent, follows AngularJS's dependency rules, and is easy to maintain and scale.
+    Замечание: Это стратегия для согласованности. Здесь очень много хороших вариантов. Выберите тот, который следует правилам зависимостей AngularJS, и его проще поддерживать и масштабировать. 
 
-    > My structures vary slightly between projects but they all follow these guidelines for structure and modularity. The implementation may vary depending on the features and the team. In other words, don't get hung up on an exact like-for-like structure but do justify your structure using consistency, maintainability, and efficiency in mind. 
+    > Мои структуры слегка отличаются от проекта к проекту, но они всегда следовали этим руководствам для структуры и модульности. Реализация может менятся в зависимости от особенностей проекта и команды. Другими словами, не зацикливайтесь на точных воспроизведениях структуры. Регулируйте свою структуру учитывая согласованность, способность поддерживать код и эффективность.
 
-    > In a small app, you can also consider putting all the shared dependencies in the app module where the feature modules have no direct dependencies. This makes it easier to maintain the smaller application, but makes it harder to reuse modules outside of this application.
+    > В небольшом приложении вы можете конечно объединить все общие зависимости в модуль приложения, где функциональные модули не имеют прямых зависимостей. Это проще поддерживать в маленьких приложениях, использовать это вне приложения будет очень затруднительно.  
 
 **[Back to top](#table-of-contents)**
 
