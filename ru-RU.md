@@ -2016,25 +2016,27 @@
 
   - Держите структуру папок плоской, как можно дольше. Когда у вас больше 7 файлов начните думать о разделении.
 
-    *Почему?*: Никто не хочет искать файл в семи уровнях папок. Вспомните о меню на веб-сайтах … все что глубже второго уровня требует серьезного размышления. В в организации структуры папок нет жестких правил, но если папка содержит 7-10 файлов, нужно делать подпапку. Основывайтесь на уровне вашего комфорта.  Base it on your comfort level. Используйте плоскую структуру пока не станет точно очевидно, что нужно создать новую папку (и чтобы соблюсти принципы LIFT).
+    *Почему?*: Никто не хочет искать файл в семи уровнях папок. Вспомните о меню на веб-сайтах … все что глубже второго уровня требует серьезного размышления. В в организации структуры папок нет жестких правил, но если папка содержит 7-10 файлов, нужно делать подпапку. Основывайтесь на уровне вашего комфорта.  Base it on your comfort level. Используйте плоскую структуру пока не станет точно очевидно, что нужно создать новую папку (и это поможет соблюсти принципы LIFT).
 
-### T-DRY (Try to Stick to DRY)
+### T-DRY (Try to Stick to DRY) T-DRY (Старайтесь придерживаться принципов DRY)
 ###### [Style [Y144](#style-y144)]
 
-  - Be DRY, but don't go nuts and sacrifice readability.
+  - Примечание переводчика: Аббревиатура DRY значит Don`t Repeat Yourself (Не повторяйте себя).   
+  
+  - Придерживайтесь DRY, но не сходите с ума и не жертвуйте читабельностью.
 
-    *Why?*: Being DRY is important, but not crucial if it sacrifices the others in LIFT, which is why I call it T-DRY. I don’t want to type session-view.html for a view because, well, it’s obviously a view. If it is not obvious or by convention, then I name it. 
+    *Почему?*: Быть DRY - это важно, но не критично, если в жертву приносятся другие принципы LIFT, поэтому я и назвал это T-DRY (Try DRY - попытайтесь быть DRY). Я не хочу печатать session-view.html для представления, потому что и так понятно, что это представление(view). Но если это не очевидно или это определено соглашением, тогда дам имя полное.
 
 **[Back to top](#table-of-contents)**
 
-## Application Structure
+## Структура Приложения
 
-### Overall Guidelines
+### Общее руководство
 ###### [Style [Y150](#style-y150)]
 
-  - Have a near term view of implementation and a long term vision. In other words, start small and but keep in mind on where the app is heading down the road. All of the app's code goes in a root folder named `app`. All content is 1 feature per file. Each controller, service, module, view is in its own file. All 3rd party vendor scripts are stored in another root folder and not in the `app` folder. I didn't write them and I don't want them cluttering my app (`bower_components`, `scripts`, `lib`).
+  - Имейте короткую перспективу реализации и долгосрочное видение проекта. Другими словами, начинайте с малого, но держите всегда в голове куда развивается ваше приложение. Весь код приложения идет в корневую папку `app`. Все содержимое распределяется, как один компонент на один файл. Каждый контроллер, сервис, модуль, представление - каждый в своем файле. Все скрипты сторонних производителей помещаются в другую корневую папку, а не в папку `app`. Я их не писал и я не хочу, чтобы они загромождали мое приложение (`bower_components`, `scripts`, `lib`).
 
-    Note: Find more details and reasoning behind the structure at [this original post on application structure](http://www.johnpapa.net/angular-app-structuring-guidelines/).
+    Замечание: Найти более подробную информацию и объяснение структуры: [тут оригинальная статья о структуре приложения](http://www.johnpapa.net/angular-app-structuring-guidelines/).
 
 ### Layout
 ###### [Style [Y151](#style-y151)]
