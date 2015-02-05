@@ -2004,19 +2004,19 @@
     .bower.json
     ```
 
-### Identify
+### Идентификация
 ###### [Style [Y142](#style-y142)]
 
-  - When you look at a file you should instantly know what it contains and represents.
+  - Когда вы смотрите на файл вы должны мгновенно знать и понимать, что он содержит и представляет.
 
-    *Why?*: You spend less time hunting and pecking for code, and become more efficient. If this means you want longer file names, then so be it. Be descriptive with file names and keeping the contents of the file to exactly 1 component. Avoid files with multiple controllers, multiple services, or a mixture. There are deviations of the 1 per file rule when I have a set of very small features that are all related to each other, they are still easily identifiable.
+    *Почему?*: Вы потратите меньше времени на охоту и клевание кода, и станете более эффективными. Если для этого потребуется более длинные имена файлов, то пусть будет так. Делайте имена файлов описательными, и держите в файле только один компонент. Избегайте содержать в файле несколько контроллеров, несколько сервисов или вообще смесь всего. Могут быть конечно отклонения от правила 1 компонента в файле, когда я прописываю в одном файле очень маленькие сущности, которые связаны друг с другом, но они все равно очень легко идентифицируемы.
 
-### Flat
+### Плоская структура
 ###### [Style [Y143](#style-y143)]
 
-  - Keep a flat folder structure as long as possible. When you get to 7+ files, begin considering separation.
+  - Держите структуру папок плоской, как можно дольше. Когда у вас больше 7 файлов начните думать о разделении.
 
-    *Why?*: Nobody wants to search 7 levels of folders to find a file. Think about menus on web sites … anything deeper than 2 should take serious consideration. In a folder structure there is no hard and fast number rule, but when a folder has 7-10 files, that may be time to create subfolders. Base it on your comfort level. Use a flatter structure until there is an obvious value (to help the rest of LIFT) in creating a new folder.
+    *Почему?*: Никто не хочет искать файл в семи уровнях папок. Вспомните о меню на веб-сайтах … все что глубже второго уровня требует серьезного размышления. В в организации структуры папок нет жестких правил, но если папка содержит 7-10 файлов, нужно делать подпапку. Основывайтесь на уровне вашего комфорта.  Base it on your comfort level. Используйте плоскую структуру пока не станет точно очевидно, что нужно создать новую папку (и чтобы соблюсти принципы LIFT).
 
 ### T-DRY (Try to Stick to DRY)
 ###### [Style [Y144](#style-y144)]
