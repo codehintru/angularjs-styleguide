@@ -2045,22 +2045,22 @@
 
     *Почему?*: Так организуются все элементы общего назначения, которые размещаются в одном месте и используются во всем приложении.
 
-### Folders-by-Feature Structure
+### Структура Папки-по-Функциональностям (Folders-by-Feature)
 ###### [Style [Y152](#style-y152)]
 
-  - Create folders named for the feature they represent. When a folder grows to contain more than 7 files, start to consider creating a folder for them. Your threshold may be different, so adjust as needed. 
+  - Создавайте папки и называйте их по функциональным особенностям, которые они представляют и реализуют. Если папка растет и превышает семь файлов, то начинайте рассматривать возможность создания новой папки. Ваш порог может быть разный, так что регулируйте такую структуру по необходимости.
 
-    *Why?*: A developer can locate the code, identify what each file represents at a glance, the structure is flat as can be, and there is no repetitive nor redundant names. 
+    *Почему?*: Разработчик может обнаруживать код, определять быстро что каждый файл реализует, структура плоская насколько это возможно, и нет повторяющихся или избыточных имен.
 
-    *Why?*: The LIFT guidelines are all covered.
+    *Почему?*: Правила LIFT выполнены все.
 
-    *Why?*: Helps reduce the app from becoming cluttered through organizing the content and keeping them aligned with the LIFT guidelines.
+    *Почему?*: Помогает уменьшить приложение, путем устранения неразберихи. Содержимое организуется понятно и соблюдаются принципы LIFT.
 
-    *Why?*: When there are a lot of files (10+) locating them is easier with a consistent folder structures and more difficult in flat structures.
+    *Почему?*: Когда набралось много файлов (более 10), то размещение их в структуре последовательных согласованных папок намного проще, чем в плоской структуре .
 
     ```javascript
     /**
-     * recommended
+     * рекомендовано
      */
 
     app/
@@ -2096,15 +2096,15 @@
             session-detail.controller.js
     ```
 
-      ![Sample App Structure](https://raw.githubusercontent.com/johnpapa/angularjs-styleguide/master/assets/modularity-2.png)
+      ![Пример Структуры Приложения](https://raw.githubusercontent.com/johnpapa/angularjs-styleguide/master/assets/modularity-2.png)
 
-      Note: Do not use structuring using folders-by-type. This requires moving to multiple folders when working on a feature and gets unwieldy quickly as the app grows to 5, 10 or 25+ views and controllers (and other features), which makes it more difficult than folder-by-feature to locate files.
-
+      Замечание: Не используйте структуру папки-по-типу. Это требует разбрасывать файлы одной функциональности по нескольким папкам, и далее все быстро становится очень громоздким, как только в приложении создаются 5, 10, или 25+ представлений и контроллеров (и других компонентов), что делает работу очень сложной, в отличиии от структуры папки-по-функциональностям. 
+      
     ```javascript
     /* 
-    * avoid
-    * Alternative folders-by-type.
-    * I recommend "folders-by-feature", instead.
+    * избегайте этого
+    * Альтернативный способ "папки-по-типу".
+    * Я рекомендую вместо этого "папки-по-функциональностям".
     */
     
     app/
