@@ -2164,25 +2164,25 @@
 
     *Почему?*: Добавление дополнительных ролей в корень приложения, типа получения или удаления данных, отображение представлений или другой подобной логики, не связанной со сборкой частей приложения вместе, загрязняет модуль приложения, а сами добавленные функциональности будет труднее повторно использовать или отключить.
 
-    *Почему?*: Модуль приложения становится манифестом, который описывает какие модули участвуют в работе приложения.
+    *Почему?*: Модуль приложения становится манифестом, который описывает какие модули подключаются к приложению.
 
-### Feature Areas are Modules
+### Функциональные Области и Модули
 ###### [Style [Y163](#style-y163)]
 
-  - Create modules that represent feature areas, such as layout, reusable and shared services, dashboards, and app specific features (e.g. customers, admin, sales).
+  - Создавайте модули, которые представляют функциональные области, такие как папка общей компоновки (layout), повторно используемые и общие сервисы, информационные панели, и специфические функциональности приложения (типа клиенты, администратор, продажи).
 
-    *Why?*: Self contained modules can be added to the application with little or no friction.
+    *Почему?*: Автономные модули могут быть добавлены с небольшиими доработками или вообще без них.
 
-    *Why?*: Sprints or iterations can focus on feature areas and turn them on at the end of the sprint or iteration.
+    *Почему?*: Спринты или итерации могут сосредоточится на функциональных областях, и включить их по завершению спринта или итерации.
 
-    *Why?*: Separating feature areas into modules makes it easier to test the modules in isolation and reuse code. 
+    *Почему?*: Оформление функциональных областей в модули позволяет проще их тестировать в изолированном или повторно используемом коде.  
 
-### Reusable Blocks are Modules
+### Повторно Используемые Блоки и Модули
 ###### [Style [Y164](#style-y164)]
 
-  - Create modules that represent reusable application blocks for common services such as exception handling, logging, diagnostics, security, and local data stashing.
+  - Создавайте модули, которые представляют из себя повторно используемые блоки приложения для общих сервисов таких как обработка исключений, логгирование, диагностика, безопасность и локальная работа с данными.
 
-    *Why?*: These types of features are needed in many applications, so by keeping them separated in their own modules they can be application generic and be reused across applications.
+    *Почему?*: Эти типы функциональностей нужны во многих приложениях. Поэтому держите их отдельно в своих собственных модулях, применяйте универсально и повторно используйте во многих приложениях. 
 
 ### Module Dependencies
 ###### [Style [Y165](#style-y165)]
