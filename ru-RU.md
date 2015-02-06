@@ -2396,36 +2396,35 @@
 
 **[Back to top](#table-of-contents)**
 
-## Animations
+## Анимации
 
-### Usage
+### Применение
 ###### [Style [Y210](#style-y210)]
 
-  - Use subtle [animations with AngularJS](https://docs.angularjs.org/guide/animations) to transition between states for views and primary visual elements. Include the [ngAnimate module](https://docs.angularjs.org/api/ngAnimate). The 3 keys are subtle, smooth, seamless.
+  - Используйте subtle [анимации AngularJS](https://docs.angularjs.org/guide/animations) чтобы перемещать состояния представлений и первичные визуальные элементы. Подключите [модуль ngAnimate](https://docs.angularjs.org/api/ngAnimate). Есть три ключа - тонкий (subtle), плавный(smooth), цельный(seamless).
 
-    *Why?*: Subtle animations can improve User Experience when used appropriately.
+    *Почему?*: При правильном использовании тонкая анимация может улучшить удобство работы.
 
-    *Why?*: Subtle animations can improve perceived performance as views transition.
+    *Почему?*: Тонкие анимации могут воспринимаемую эффективность при изменениии представлений.
 
-### Sub Second
+### Длительность Анимаций
 ###### [Style [Y211](#style-y211)]
 
-  - Use short durations for animations. I generally start with 300ms and adjust until appropriate. 
-
-    *Why?*: Long animations can have the reverse affect on User Experience and perceived performance by giving the appearance of a slow application.
+  - Используйте короткую длительность анимаций. Я в основном начинаю с 300 миллисекунд и регулирую до нужного состояния.  
+    *Почему?*: Долгие анимации могут иметь обратный эффект для пользователя, приложение будет восприниматся как медленно работающее. 
 
 ### animate.css
 ###### [Style [Y212](#style-y212)]
 
-  - Use [animate.css](http://daneden.github.io/animate.css/) for conventional animations.
+  - Используйте [animate.css](http://daneden.github.io/animate.css/) для обычных анимаций.
 
-    *Why?*: The animations that animate.css provides are fast, smooth, and easy to add to your application.
+    *Почему?*: Анимации, предоставляемые animate.css, быстрые, плавные и их легко добавить в приложение.
 
-    *Why?*: Provides consistency in your animations.
+    *Почему?*: Это дает согласованность ваших анимаций.
 
-    *Why?*: animate.css is widely used and tested.
+    *Почему?*: animate.css широко используем и оттестирован.
 
-    Note: See this [great post by Matias Niemelä on AngularJS animations](http://www.yearofmoo.com/2013/08/remastered-animation-in-angularjs-1-2.html)
+    Замечание: Посмотрите эту [замечательную статью от Matias Niemelä об анимациях AngularJS](http://www.yearofmoo.com/2013/08/remastered-animation-in-angularjs-1-2.html)
 
 **[Back to top](#table-of-contents)**
 
