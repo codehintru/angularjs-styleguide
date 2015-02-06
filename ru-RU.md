@@ -2331,59 +2331,58 @@
 
     *Почему?*: Karma очень хорошо работает с такими лидерами автоматизации как [Grunt](http://www.gruntjs.com) (вместе [grunt-karma](https://github.com/karma-runner/grunt-karma)) и [Gulp](http://www.gulpjs.com) (вместе [gulp-karma](https://github.com/lazd/gulp-karma)).
 
-### Stubbing and Spying
+### Stubbing и Spying
 ###### [Style [Y193](#style-y193)]
 
-  - Use [Sinon](http://sinonjs.org/) for stubbing and spying.
+  - Используйте [Sinon](http://sinonjs.org/) для stubbing и spying.
 
-    *Why?*: Sinon works well with both Jasmine and Mocha and extends the stubbing and spying features they offer.
+    *Почему?*: Sinon хорошо работает и с Jasmine и с Mocha. Он расширяет возможности stubbing и spying, которые предлагают Jasmine и Mocha.
 
-    *Why?*: Sinon makes it easier to toggle between Jasmine and Mocha, if you want to try both.
+    *Почему?*: Sinon просто переключается между Jasmine и Mocha, это если вы хотите использовать сразу обе библиотеки.
 
-### Headless Browser
+### Невизуальный Браузер
 ###### [Style [Y194](#style-y194)]
 
-  - Use [PhantomJS](http://phantomjs.org/) to run your tests on a server.
+  - Используйте [PhantomJS](http://phantomjs.org/) для запуска тестов на сервере.
 
-    *Why?*: PhantomJS is a headless browser that helps run your tests without needing a "visual" browser. So you do not have to install Chrome, Safari, IE, or other browsers on your server. 
+    *Почему?*: PhantomJS - невизуальный браузер, который помогает запускать тесты не используя обычные визуальные браузеры. Таким образом, вам не нужно устанавливать на ваш сервер Chrome, Safari, IE, или другие браузеры. 
 
-    Note: You should still test on all browsers in your environment, as appropriate for your target audience.
+    Замечание: Все же проведите тесты на всех браузерах, особенно на браузерах вашей целевой аудитории.
 
-### Code Analysis
+### Анализ Кода
 ###### [Style [Y195](#style-y195)]
 
-  - Run JSHint on your tests. 
+  - Запустите JSHint на ваших тестах. 
 
-    *Why?*: Tests are code. JSHint can help identify code quality issues that may cause the test to work improperly.
+    *Почему?*: Тесты это код. JSHint помогает идентифицировать проблемы качества кода, которые могут причиной некорректной работы тестов.
 
-### Alleviate Globals for JSHint Rules on Tests
+### Разрешите Глобальные Переменные для Правил JSHint на Тестах
 ###### [Style [Y196](#style-y196)]
 
-  - Relax the rules on your test code to allow for common globals such as `describe` and `expect`.
+  - Смягчите правила для кода ваших тестов, чтобы разрешить общие глобальные переменные такие как `describe` и `expect`.
 
-    *Why?*: Your tests are code and require the same attention and code quality rules as all of your production code. However, global variables used by the testing framework, for example, can be relaxed by including this in your test specs.
+    *Почему?*: Ваши тесты это код и он требует того же самого внимания и соблюдения правил качества, как и весь ваш рабочий код. Все же, глобальные переменные используются средой тестирования, и правила для них могут быть ослаблены в спецификации тестов.  
 
     ```javascript
     /* global sinon, describe, it, afterEach, beforeEach, expect, inject */
     ```
 
-  ![Testing Tools](https://raw.githubusercontent.com/johnpapa/angularjs-styleguide/master/assets/testing-tools.png)
+  ![Средства Тестирования](https://raw.githubusercontent.com/johnpapa/angularjs-styleguide/master/assets/testing-tools.png)
 
-### Organizing Tests
+### Организация Тестов
 ###### [Style [Y197](#style-y197)]
 
-  - Place unit test files (specs) side-by-side with your client code. Place specs that cover server integration or test multiple components in a separate `tests` folder.
+  - Размещайте файлы модульных тестов (specs) рядом со своим клиентским кодом. А тестовые файлы (specs), которые покрывают интеграцию с сервером или тестируют сразу несколько компонентов, в отдельной папке `tests`.
 
-    *Why?*: Unit tests have a direct correlation to a specific component and file in source code. 
+    *Почему?*: Модульные тесты имеют прямое отношение к определенному компоненту и файлу с исходным кодом.
 
-    *Why?*: It is easier to keep them up to date since they are always in sight. When coding whether you do TDD or test during development or test after development, the specs are side-by-side and never out of sight nor mind, and thus more likely to be maintained which also helps maintain code coverage.
+    *Почему?*: Так легче держать тесты актуальными, потому что они всегда на виду. Во время написания кода, применяете ли вы технику TDD или тестируете во время разработки или тестируете после разработки, тестовые файлы (specs) всегда рядом, они никогда не пропадают не из вида не из мыслей. Таким образом, тестам будет всегда уделено внимание, а это поможет поддерживать покрытие кода тестами.
 
-    *Why?*: When you update source code it is easier to go update the tests at the same time.
+    *Почему?*: Когда вы изменяете исходный код, всегда проще сразу обновить тесты.
 
-    *Why?*: Placing them side-by-side makes it easy to find them and easy to move them with the source code if you move the source.
+    *Почему?*: Размещение файла кода и теста рядом упрощает их поиск и в случае необходимости, перенос в другое место обоих файлов не составляет большого труда.  
 
-
-    *Why?*: Separating specs so they are not in a distributed build is easy with grunt or gulp.
+    *Почему?*: Отделить тестовые файлы(specs), так чтобы они не попали в рабочую сборку можно с помощью grunt или gulp.  
 
     ```
     /src/client/app/customers/customer-detail.controller.js
