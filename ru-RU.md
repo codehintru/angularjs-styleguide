@@ -2428,16 +2428,16 @@
 
 **[Back to top](#table-of-contents)**
 
-## Comments
+## Комментарии
 
 ### jsDoc
 ###### [Style [Y220](#style-y220)]
 
-  - If planning to produce documentation, use [`jsDoc`](http://usejsdoc.org/) syntax to document function names, description, params and returns. Use `@namespace` and `@memberOf` to match your app structure.
+  - Если планируется производство документации, используйте синтаксис [`jsDoc`](http://usejsdoc.org/) для документирования имен функций, описаний, параметров и возвращаемых значений. Используйте `@namespace` и `@memberOf` для соответствия структуре приложения.
 
-    *Why?*: You can generate (and regenerate) documentation from your code, instead of writing it from scratch.
+    *Почему?*: Вы можете сгенерировать (и перегенерировать) документацию из вашего кода, чтобы не писать ее с нуля.
 
-    *Why?*: Provides consistency using a common industry tool.
+    *Почему?*: С помощью общеиспользуемого промышленного инстумента вы получаете согласованность.
 
     ```javascript
     /**
@@ -2482,14 +2482,14 @@
 
 ## JS Hint
 
-### Use an Options File
+### Используйте Файл Настроек
 ###### [Style [Y230](#style-y230)]
 
-  - Use JS Hint for linting your JavaScript and be sure to customize the JS Hint options file and include in source control. See the [JS Hint docs](http://www.jshint.com/docs/) for details on the options.
+  - Используйте JS Hint для проверки вашего кода JavaScript и проверьте файл настроек самого JS Hint, а также включите этот файл с систему управления исходным кодом (source control). Смотрите [JS Hint docs](http://www.jshint.com/docs/) для точного описания настроек.
 
-    *Why?*: Provides a first alert prior to committing any code to source control.
+    *Почему?*: Если код некорректен, то получаем предупреждения, перед тем, как отправить изменения в систему управления исходным кодом.
 
-    *Why?*: Provides consistency across your team.
+    *Почему?*: Обеспечивается согласованность для всей команды.
 
     ```javascript
     {
@@ -2557,14 +2557,14 @@
 
 **[Back to top](#table-of-contents)**
 
-## Constants
+## Константы
 
-### Vendor Globals
+### Глобальные Переменные Сторонних Производителей (Vendors)  
 ###### [Style [Y240](#style-y240)]
 
-  - Create an AngularJS Constant for vendor libraries' global variables.
+  - Создайте константы AngularJS для глобальных переменных библиотек сторонних производителей.
 
-    *Why?*: Provides a way to inject vendor libraries that otherwise are globals. This improves code testability by allowing you to more easily know what the dependencies of your components are (avoids leaky abstractions). It also allows you to mock these dependencies, where it makes sense.
+    *Почему?*: Provides a way to inject vendor libraries that otherwise are globals. This improves code testability by allowing you to more easily know what the dependencies of your components are (avoids leaky abstractions). It also allows you to mock these dependencies, where it makes sense.
 
     ```javascript
     // constants.js
