@@ -2280,14 +2280,14 @@
 **[Back to top](#table-of-contents)**
 
 ## Тестирование
-Модульное тестирование помогает поддерживать чистый код. Я включил  некоторые мои рекомендации по основам модульного тестирования в виде ссылок для более подробной информации.
+Модульное тестирование помогает поддерживать чистый код. Я включил некоторые мои рекомендации по основам модульного тестирования в виде ссылок для более подробной информации.
 
-### Write Tests with Stories
+### Пишите Тесты с Историями
 ###### [Style [Y190](#style-y190)]
 
-  - Write a set of tests for every story. Start with an empty test and fill them in as you write the code for the story.
+  - Пишите набор тестов для каждой истории. Начните пустой тест и заполняйте его по мере написания кода для истории.
 
-    *Why?*: Writing the test descriptions helps clearly define what your story will do, will not do, and how you can measure success.
+    *Почему?*: Описания тестов помогают ясно определить, что ваша история будет делать, чего не будет, и как вы можете оценить успешность тестов.
 
     ```javascript
     it('should have Avengers controller', function() {
@@ -2309,27 +2309,27 @@
     // and so on
     ```
 
-### Testing Library
+### Библиотеки для тестирования
 ###### [Style [Y191](#style-y191)]
 
-  - Use [Jasmine](http://jasmine.github.io/) or [Mocha](http://mochajs.org) for unit testing.
+  - Используйте [Jasmine](http://jasmine.github.io/) или [Mocha](http://mochajs.org) для модульного тестирования.
 
-    *Why?*: Both Jasmine and Mocha are widely used in the AngularJS community. Both are stable, well maintained, and provide robust testing features.
+    *Почему?*: И Jasmine и Mocha широко распространены в сообществе AngularJS. Обе они стабильны, хорошо поддерживаются, и предоставляют отличные возможности для тестирования.
 
-    Note: When using Mocha, also consider choosing an assert library such as [Chai](http://chaijs.com).
+    Замечание: Если используется Mocha, то дополнительно нужно использовать assert-библиотеку, например [Chai](http://chaijs.com).
 
-### Test Runner
+### Движок Запуска Тестов
 ###### [Style [Y192](#style-y192)]
 
-  - Use [Karma](http://karma-runner.github.io) as a test runner.
+  - Используйте [Karma](http://karma-runner.github.io) в качестве движка для запуска тестов.
 
-    *Why?*: Karma is easy to configure to run once or automatically when you change your code.
+    *Почему?*: Karma просто конфигурируется, она просто запускается вручную или автоматически, как только вы измените код.
 
-    *Why?*: Karma hooks into your Continuous Integration process easily on its own or through Grunt or Gulp.
+    *Why?*: Karma просто внедряется в ваш процесс Continuous Integration, как самостоятельно, так и через Grunt или Gulp. 
 
-    *Why?*: Some IDE's are beginning to integrate with Karma, such as [WebStorm](http://www.jetbrains.com/webstorm/) and [Visual Studio](http://visualstudiogallery.msdn.microsoft.com/02f47876-0e7a-4f6c-93f8-1af5d5189225).
+    *Почему?*: Некоторые средства разработки (IDE) начинают интегрировать Karma, такие как [WebStorm](http://www.jetbrains.com/webstorm/) и [Visual Studio](http://visualstudiogallery.msdn.microsoft.com/02f47876-0e7a-4f6c-93f8-1af5d5189225).
 
-    *Why?*: Karma works well with task automation leaders such as [Grunt](http://www.gruntjs.com) (with [grunt-karma](https://github.com/karma-runner/grunt-karma)) and [Gulp](http://www.gulpjs.com) (with [gulp-karma](https://github.com/lazd/gulp-karma)).
+    *Почему?*: Karma очень хорошо работает с такими лидерами автоматизации как [Grunt](http://www.gruntjs.com) (вместе [grunt-karma](https://github.com/karma-runner/grunt-karma)) и [Gulp](http://www.gulpjs.com) (вместе [gulp-karma](https://github.com/lazd/gulp-karma)).
 
 ### Stubbing and Spying
 ###### [Style [Y193](#style-y193)]
