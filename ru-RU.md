@@ -2205,14 +2205,14 @@
 
 **[Back to top](#table-of-contents)**
 
-## Startup Logic
+## Логика Запуска Приложения
 
-### Configuration
+### Конфигурация
 ###### [Style [Y170](#style-y170)]
 
-  - Inject code into [module configuration](https://docs.angularjs.org/guide/module#module-loading-dependencies) that must be configured before running the angular app. Ideal candidates include providers and constants.
+  - Вставьте код в [конфигурацию модуля](https://docs.angularjs.org/guide/module#module-loading-dependencies), который должен быть сконфигурирован перед запуском angular-приложения. Идеальные кандидаты для этого - провайдеры и константы.
 
-    *Why?*: This makes it easier to have a less places for configuration.
+    *Почему?*: Чем меньше мест для конфигурации, тем лучше.
 
   ```javascript
   angular
@@ -2239,12 +2239,12 @@
   }
   ```
 
-### Run Blocks
+### Блоки Run
 ###### [Style [Y171](#style-y171)]
 
-  - Any code that needs to run when an application starts should be declared in a factory, exposed via a function, and injected into the [run block](https://docs.angularjs.org/guide/module#module-loading-dependencies).
+  - Весь код, который должен запуститься, во время старта приложения, должен быть объявлен в фабрике, предоставлен в виде функции, и вставлен в [блок run](https://docs.angularjs.org/guide/module#module-loading-dependencies).
 
-    *Why?*: Code directly in a run block can be difficult to test. Placing in a factory makes it easier to abstract and mock.
+    *Почему?*: Если код поместить сразу в блок run, то его будет тяжело тестить. Размещение кода в фабрике облегчает абстрагирование и использование фиктивных объектов для тестов. 
 
   ```javascript
   angular
@@ -2261,26 +2261,26 @@
 
 **[Back to top](#table-of-contents)**
 
-## Angular $ Wrapper Services
+## Angular и Интерфейсные Сервисы
 
 ### $document and $window
 ###### [Style [Y180](#style-y180)]
 
-  - Use [`$document`](https://docs.angularjs.org/api/ng/service/$document) and [`$window`](https://docs.angularjs.org/api/ng/service/$window) instead of `document` and `window`.
+  - Используйте [`$document`](https://docs.angularjs.org/api/ng/service/$document) и [`$window`](https://docs.angularjs.org/api/ng/service/$window) вместо `document` и `window`.
 
-    *Why?*: These services are wrapped by Angular and more easily testable than using document and window in tests. This helps you avoid having to mock document and window yourself.
+    *Почему?*: Эти сервисы являются оберткой среды Angular, они более проще тестируются, чем объекты document и window. Это дает вам возможность не создавать самим фиктивные объекты document and window. 
 
 ### $timeout and $interval
 ###### [Style [Y181](#style-y181)]
 
-  - Use [`$timeout`](https://docs.angularjs.org/api/ng/service/$timeout) and [`$interval`](https://docs.angularjs.org/api/ng/service/$interval) instead of `setTimeout` and `setInterval` .
+  - Используйте [`$timeout`](https://docs.angularjs.org/api/ng/service/$timeout) и [`$interval`](https://docs.angularjs.org/api/ng/service/$interval) вместо `setTimeout` и `setInterval` .
 
-    *Why?*: These services are wrapped by Angular and more easily testable and handle AngularJS's digest cycle thus keeping data binding in sync.
+    *Почему?*: Эти сервисы являются оберткой среды Angular, они более легко тестируемы и еще они обрабатываются циклом digest среды AngularJS, таким образом синхронизируя данные.
 
 **[Back to top](#table-of-contents)**
 
-## Testing
-Unit testing helps maintain clean code, as such I included some of my recommendations for unit testing foundations with links for more information.
+## Тестирование
+Модульное тестирование помогает поддерживать чистый код. Я включил  некоторые мои рекомендации по основам модульного тестирования в виде ссылок для более подробной информации.
 
 ### Write Tests with Stories
 ###### [Style [Y190](#style-y190)]
