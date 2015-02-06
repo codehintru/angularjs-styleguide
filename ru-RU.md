@@ -2562,9 +2562,9 @@
 ### Глобальные Переменные Сторонних Производителей (Vendors)  
 ###### [Style [Y240](#style-y240)]
 
-  - Создайте константы AngularJS для глобальных переменных библиотек сторонних производителей.
+  - Создайте константы AngularJS для глобальных переменных из библиотек сторонних производителей.
 
-    *Почему?*: Provides a way to inject vendor libraries that otherwise are globals. This improves code testability by allowing you to more easily know what the dependencies of your components are (avoids leaky abstractions). It also allows you to mock these dependencies, where it makes sense.
+    *Почему?*: Предоставляет способ подключить сторонние библиотеки, которые являются глобальными переменными. Это улучшает тестируемость кода, позволяя вам проще узнать, какие зависимости есть у ваших компонентов. Это также позволит вам, создать фиктивные объекты этих зависимостей, если это нужно.
 
     ```javascript
     // constants.js
@@ -2582,21 +2582,21 @@
     
 ###### [Style [Y241](#style-y241)]
 
-  - Use constants for values that do not change and do not come from another service. When constants are used only for a module that may be reused in multiple applications, place constants in a file per module named after the module. Until this is required, keep constants in the main module in a `constants.js` file.
+  - Используйте константы для значений, которые не изменяются и не приходят из другого сервиса. Если константы используются в модуле, который может быть использован в нескольких приложениях, то поместите константу в файле, названному по имени модуля. В противном случае держите константы в главном модуле в файле `constants.js`. 
 
-    *Why?*: A value that may change, even infrequently, should be retrieved from a service so you do not have to change the source code. For example, a url for a data service could be placed in a constants but a better place would be to load it from a web service.
+    *Почему?*: Значение может измениться, возможно это редкая ситуация, это значение сервис нам возвращает, и таким образом мы не будем менять наш рабочий код, использующий этот сервис. Напрмер, url для сервиса данных мог бы быть помещен в константы, но лучше загружать его из веб сервиса.
+    
+    *Почему?*: Константы могут быть инжектированы в любой angular-компонент, включая провайдеры.
 
-    *Why?*: Constants can be injected into any angular component, including providers.
-
-    *Why?*: When an application is separated into modules that may be reused in other applications, each stand-alone module should be able to operate on its own including any dependent constants. 
+    *Почему?*: Когда приложение разделено на модули, которые могут быть использованы в других приложениях, каждый отдельный модуль должен быть способен оперировать своими собственными зависимыми константами. 
 
     ```javascript
-    // Constants used by the entire app
+    // Константы используются во всем приложении
     angular
         .module('app.core')
         .constant('moment', moment);
 
-    // Constants used only by the sales module
+    // Константы используются в модуле продаж
     angular
         .module('app.sales')
         .constant('events', {
@@ -2607,56 +2607,56 @@
 
 **[Back to top](#table-of-contents)**
 
-## File Templates and Snippets
-Use file templates or snippets to help follow consistent styles and patterns. Here are templates and/or snippets for some of the web development editors and IDEs.
+## Шаблоны файлов и сниппеты (фрагменты)
+Используйте шаблоны файлов и сниппеты, чтобы соблюсти согласованность стилей и инструкций. Здесь есть шаблоны и/или сниппеты для некоторых веб-редакторов и интегрированных средств разработки (IDE).
 
 ### Sublime Text
 ###### [Style [Y250](#style-y250)]
 
-  - AngularJS snippets that follow these styles and guidelines. 
+  - AngularJS сниппеты, которые соблюдают приведенные здесь стили и руководства. 
 
-    - Download the [Sublime Angular snippets](assets/sublime-angular-snippets.zip?raw=true) 
-    - Place it in your Packages folder
-    - Restart Sublime 
-    - In a JavaScript file type these commands followed by a `TAB`
+    - Скачайте [Sublime Angular сниппеты](assets/sublime-angular-snippets.zip?raw=true) 
+    - Поместите все в вашу папку Packages
+    - Перезапустите Sublime 
+    - В файле JavaScript напечатайте следующие команды после клавиши `TAB`
  
     ```javascript
-    ngcontroller // creates an Angular controller
-    ngdirective // creates an Angular directive
-    ngfactory // creates an Angular factory
-    ngmodule // creates an Angular module
+    ngcontroller // создает контроллер Angular
+    ngdirective // создает директиву Angular
+    ngfactory // создает фабрику Angular
+    ngmodule // создает модуль Angular
     ```
 
 ### Visual Studio
 ###### [Style [Y251](#style-y251)]
 
-  - AngularJS file templates that follow these styles and guidelines can be found at [SideWaffle](http://www.sidewaffle.com)
+  - Шаблоны файлов AngularJS, которые соблюдают приведенные здесь стили и руководства, можно найти на [SideWaffle](http://www.sidewaffle.com)
 
-    - Download the [SideWaffle](http://www.sidewaffle.com) Visual Studio extension (vsix file)
-    - Run the vsix file
-    - Restart Visual Studio
+    - Скачайте [SideWaffle](http://www.sidewaffle.com) это расширение к Visual Studio (файл vsix)
+    - Запустите файл vsix
+    - Перезапустите Visual Studio
 
 ### WebStorm
 ###### [Style [Y252](#style-y252)]
 
-  - AngularJS snippets and file templates that follow these styles and guidelines. You can import them into your WebStorm settings:
+  - AngularJS сниппеты и шаблоны файлов, которые соблюдают приведенные здесь стили и руководства. Вы можете импортировать их в свои настройки WebStorm:
 
-    - Download the [WebStorm AngularJS file templates and snippets](assets/webstorm-angular-file-template.settings.jar?raw=true) 
-    - Open WebStorm and go to the `File` menu
-    - Choose the `Import Settings` menu option
-    - Select the file and click `OK`
-    - In a JavaScript file type these commands followed by a `TAB`:
+    - Скачайте [WebStorm AngularJS шаблоны файлов и сниппетов](assets/webstorm-angular-file-template.settings.jar?raw=true) 
+    - Откройте WebStorm и перейдите в меню `File`
+    - Выберите пункт меню `Import Settings`
+    - Выберите файл и нажмите `OK`
+    - В файле JavaScript напечатайте следующие команды после клавиши `TAB`:
 
     ```javascript
-    ng-c // creates an Angular controller
-    ng-f // creates an Angular factory
-    ng-m // creates an Angular module
+    ng-c // создает контроллер Angular
+    ng-f // создает фабрику Angular
+    ng-m // создает модуль Angular
     ```
 
 **[Back to top](#table-of-contents)**
 
-## AngularJS docs
-For anything else, API reference, check the [Angular documentation](//docs.angularjs.org/api).
+## AngularJS документация
+Для дополнительной информации, описания API, смотрите [документацию Angular](//docs.angularjs.org/api).
 
 ## Contributing
 
